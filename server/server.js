@@ -7,10 +7,11 @@ const port = process.env.PORT || 5000;
 
 // API calls
 app.get('/api/members', (req, res) => {
-  catalystDb('Roster')
+  const TABLE_NAME = 'Roster';
+  catalystDb(TABLE_NAME)
     .select()
     .all((err, data) => {
-      res.send({ names: [data.map(member => member.fields.Name)] });
+      res.send({ names: [data.map(member => member.fields.Name).filter(name => name)] });
     });
 });
 

@@ -6,13 +6,15 @@ const { AIRTABLE_API_KEY, CATALYSTDB_BASE_KEY } = process.env;
 
 if (!AIRTABLE_API_KEY || !CATALYSTDB_BASE_KEY) {
   // eslint-disable-next-line no-console
-  console.log('Error: Specify AIRTABLE_API_KEY and AIRTABLE_BASE_KEY in a .env file');
+  console.log(
+    "Error/note from Ben:\n1. Create a file 'catalyst-website-v2/server/.env'.\n2. Inside that file, create the requisite variables failing this condition in separate lines as detailed here: https://www.npmjs.com/package/dotenv#usage.",
+  );
   process.exit(1);
 }
 
-const APIObj = new Airtable({ apiKey: AIRTABLE_API_KEY });
+const AirtableAPIObj = new Airtable({ apiKey: AIRTABLE_API_KEY });
 
 // export individual tables
 module.exports = {
-  catalystDb: APIObj.base(CATALYSTDB_BASE_KEY),
+  catalystDb: AirtableAPIObj.base(CATALYSTDB_BASE_KEY),
 };
