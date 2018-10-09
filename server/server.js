@@ -1,13 +1,17 @@
 const express = require('express');
 const path = require('path');
-const base = require('airtable');
+const { catalystDb } = require('./airtable-init');
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 // API calls
-app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Express' });
+app.get('/api/members', (req, res) => {
+  catalystDb('Roster')
+    .select()
+    .all((err, data) => {
+      res.send({ names: [data.map(member => member.fields.Name)] });
+    });
 });
 
 if (process.env.NODE_ENV === 'production') {
