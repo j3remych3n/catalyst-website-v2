@@ -11,7 +11,7 @@ app.get('/api/members', (req, res) => {
   catalystDb(TABLE_NAME)
     .select()
     .all((err, data) => {
-      res.send({ names: [data.map(member => member.fields.Name).filter(name => name)] });
+      res.send({ names: data.map(member => member.fields.Name).filter(name => name) });
     });
 });
 
