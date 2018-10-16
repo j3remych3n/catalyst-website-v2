@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import axios from 'axios';
+import uuidv1 from 'uuid/v1';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.min';
+import 'slick-carousel/slick/slick';
 
 export default class Companies extends Component {
   constructor(props) {
@@ -25,16 +28,18 @@ export default class Companies extends Component {
       slidesToShow: 3,
       slidesToScroll: 1,
       autoplay: true,
-      speed: 2000,
-      autoplaySpeed: 2000,
+      speed: 4000,
+      autoplaySpeed: 0,
       cssEase: 'linear',
-      arrow: true,
+      arrows: true,
+      variableWidth: true,
+      pauseOnHover: false,
     };
     const { logos } = this.state;
     return (
       <Slider {...settings}>
         {logos.map(logo => (
-          <div>
+          <div key={uuidv1()}>
             <img src={logo} alt="" height="200" />
           </div>
         ))}
