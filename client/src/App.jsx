@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import uuidv1 from 'uuid/v1';
+import Companies from './components/Companies';
 
 import logo from './logo.svg';
 
@@ -27,6 +28,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <ul>
+          <Companies />
           {names.map(name => (
             <li key={uuidv1()}>{name}</li>
           ))}
