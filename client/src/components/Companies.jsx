@@ -13,30 +13,26 @@ const carouselSettings = {
   slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
-  speed: 4000,
   dots: false,
-  autoplaySpeed: 500,
-  cssEase: 'linear',
+  speed: 1000,
+  arrows: true,
   responsive: [
     {
       breakpoint: 1024,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 1,
       },
     },
     {
       breakpoint: 600,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 1,
       },
     },
     {
       breakpoint: 480,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
       },
     },
   ],
