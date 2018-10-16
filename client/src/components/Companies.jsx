@@ -28,33 +28,16 @@ export default class Companies extends Component {
       speed: 2000,
       autoplaySpeed: 2000,
       cssEase: 'linear',
+      arrow: true,
     };
     const { logos } = this.state;
     return (
       <Slider {...settings}>
         {logos.map(logo => (
           <div>
-            <img src={logo} alt="" width="100" height="50" />
+            <img src={logo} alt="" height="200" />
           </div>
         ))}
-        {/* <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div> */}
       </Slider>
     );
   }
