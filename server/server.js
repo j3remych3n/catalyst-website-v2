@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { catalystDb } = require('./airtable-init');
+const { catalystDb, websiteV2 } = require('./airtable-init');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -12,6 +12,16 @@ app.get('/api/members', (req, res) => {
     .select()
     .all((err, data) => {
       res.send({ names: data.map(member => member.fields.Name).filter(name => name) });
+    });
+});
+
+app.get('/api/companies', (req, res) => {
+  const TABLE_NAME = 'Companies';
+  websiteV2(TABLE_NAME)
+    .select()
+    .all((err, data) => {
+      // Logo indexed at 0 because only 1 attachment (but could be array of multiple)
+      res.send({ logos: data.map(company => company.fields.Logo[0].url) });
     });
 });
 

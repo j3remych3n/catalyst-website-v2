@@ -13,10 +13,10 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get('/api/members')
-      .then(response => this.setState({ names: response.data.names }))
-      .catch(() => {});
+    // axios
+    //   .get('/api/members')
+    //   .then(response => this.setState({ names: response.data.names }))
+    //   .catch(() => {});
   }
 
   render() {
