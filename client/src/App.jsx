@@ -1,4 +1,5 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
 import Companies from './components/Companies';
 
 import logo from './logo.svg';
@@ -11,9 +12,9 @@ const App = () => (
       <img src={logo} className="App-logo" alt="logo" />
       <h1 className="App-title">Welcome to React</h1>
     </header>
-    <ul>
+    <Grid container alignItems="center" justify="center">
       <Companies />
-    </ul>
+    </Grid>
   </div>
 );
 
