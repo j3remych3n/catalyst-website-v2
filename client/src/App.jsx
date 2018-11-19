@@ -4,7 +4,7 @@ import Companies from './components/Companies';
 
 import logo from './logo.svg';
 
-import './App.css';
+import './css/App.css';
 
 const App = () => (
   <div className="App">

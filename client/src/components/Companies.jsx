@@ -6,6 +6,7 @@ import uuidv1 from 'uuid/v1';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import '../css/Companies.css';
 
 const carouselSettings = {
   pauseOnHover: false,
