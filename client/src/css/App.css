@@ -26,10 +26,3 @@
     transform: rotate(360deg);
   }
 }
-
-/* Companies.jsx */
-.Logo-responsive {
-  max-width: 100%;
-  height: auto;
-  margin: auto;
-}
