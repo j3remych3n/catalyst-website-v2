@@ -11,8 +11,7 @@ const App = () => (
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <h1 className="App-title">
-        “All happy families are alike; each unhappy family is unhappy in its own way.” ― Leo Tolstoy
-        , Anna Karenina
+        “All happy families are alike; each unhappy family is unhappy in its own way.” ― Austin Carter
       </h1>
     </header>
     <Grid container alignItems="center" justify="center">
