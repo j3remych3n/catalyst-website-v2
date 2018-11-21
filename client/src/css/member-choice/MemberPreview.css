@@ -9,3 +9,8 @@
 .MemberPreview-picture:hover {
   transform: scale(1.05);
 }
+
+.MemberPreview-name {
+  font-size: 10pt;
+  color: #000;
+}
