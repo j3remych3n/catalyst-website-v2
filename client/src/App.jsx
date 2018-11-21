@@ -4,7 +4,6 @@ import Companies from "./components/Companies";
 import Home from "./components/Home";
 
 import logo from "./logo.svg";
-
 import "./css/App.css";
 
 // const App = () => (
