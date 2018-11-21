@@ -10,7 +10,7 @@ export default class MemberGroup extends Component {
   };
 
   render() {
-    const { members } = this.props;
+    const { members, onSelect } = this.props;
     const { selected } = this.state;
     const half = Math.floor((members.length + 1) / 2);
     const firstHalf = members.slice(0, half);
@@ -22,7 +22,7 @@ export default class MemberGroup extends Component {
             <MemberPreview
               key={member.name}
               isSelected={member.name === selected}
-              onSelect={() => this.setState({ selected: member.name })}
+              onSelect={() => onSelect(member)}
               {...member}
             />
           ))}
@@ -32,7 +32,7 @@ export default class MemberGroup extends Component {
             <MemberPreview
               key={member.name}
               isSelected={member.name === selected}
-              onSelect={() => this.setState({ selected: member.name })}
+              onSelect={() => onSelect(member)}
               {...member}
             />
           ))}
@@ -44,4 +44,5 @@ export default class MemberGroup extends Component {
 
 MemberGroup.propTypes = {
   members: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  onSelect: PropTypes.func.isRequired,
 };

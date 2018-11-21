@@ -10,7 +10,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 1',
   },
   {
     name: 'Ben Hubsch2',
@@ -19,7 +19,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 2',
   },
   {
     name: 'Ben Hubsch3',
@@ -28,7 +28,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 3',
   },
   {
     name: 'Ben Hubsch4',
@@ -37,7 +37,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 4',
   },
   {
     name: 'Ben Hubsch5',
@@ -46,7 +46,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 5',
   },
   {
     name: 'Ben Hubsch6',
@@ -55,7 +55,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 6',
   },
   {
     name: 'Ben Hubsch7',
@@ -64,7 +64,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 7',
   },
   {
     name: 'Ben Hubsch8',
@@ -73,7 +73,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 8',
   },
   {
     name: 'Ben Hubsch9',
@@ -82,7 +82,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 9',
   },
   {
     name: 'Ben Hubsch10',
@@ -91,7 +91,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 10',
   },
   {
     name: 'Ben Hubsch11',
@@ -100,7 +100,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 11',
   },
   {
     name: 'Ben Hubsch12',
@@ -109,7 +109,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 12',
   },
   {
     name: 'Ben Hubsch13',
@@ -118,7 +118,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 13',
   },
   {
     name: 'Ben Hubsch14',
@@ -127,7 +127,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 14',
   },
   {
     name: 'Ben Hubsch15',
@@ -136,7 +136,7 @@ const members = [
     giturl: 'https://github.com',
     linkedinurl: 'https://www.linkedin.com',
     personalurl: 'https://www.google.com',
-    bio: 'This is my bio',
+    bio: 'This is my bio 15',
   },
 ];
 
@@ -145,14 +145,14 @@ export default class Members extends Component {
     super(props);
     this.state = {
       selected: {
-        name: 'Dummy',
+        name: 'Dummy DumDum',
         imageSrc:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/1200px-Lion_waiting_in_Namibia.jpg',
         year: '2019',
         giturl: 'https://github.com',
         linkedinurl: 'https://www.linkedin.com',
         personalurl: 'https://www.google.com',
-        bio: 'This is my bio',
+        bio: 'This is my bio dummy',
       },
     };
   }
@@ -161,7 +161,7 @@ export default class Members extends Component {
     const { selected } = this.state;
     return (
       <>
-        <MemberChoice members={members} />
+        <MemberChoice members={members} onSelect={chosen => this.setState({ selected: chosen })} />
         <MemberCard selected={selected} />
       </>
     );

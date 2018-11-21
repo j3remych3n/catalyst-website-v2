@@ -25,10 +25,11 @@ export default class MemberChoice extends Component {
 
   render() {
     const { years, membersByYear, chosenYear } = this.state;
+    const { onSelect } = this.props;
     return (
       <>
         <ButtonGroup choices={years} chooseYear={year => this.setState({ chosenYear: year })} />
-        <MemberGroup members={membersByYear[chosenYear]} />
+        <MemberGroup members={membersByYear[chosenYear]} onSelect={onSelect} />
       </>
     );
   }
@@ -42,4 +43,5 @@ MemberChoice.propTypes = {
       image: PropTypes.string,
     }),
   ).isRequired,
+  onSelect: PropTypes.func.isRequired,
 };
