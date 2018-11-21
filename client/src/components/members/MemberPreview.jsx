@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../../css/member-choice/MemberPreview.css';
+import '../../css/members/MemberPreview.css';
 
 const MemberPreview = (props) => {
   const {

@@ -14,8 +14,9 @@
 }
 
 .MemberGroup-container::-webkit-scrollbar-track {
-  background: #ffffff;
-  opacity: 50%;
+  background: grey;
+  /* background: #ffffff;
+  opacity: 50%; */
 }
 
 .MemberGroup-container::-webkit-scrollbar-thumb {

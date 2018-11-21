@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Companies from './components/Companies';
-import MemberGroup from './components/member-choice/MemberGroup';
+import Members from './components/members/Members';
 
 import logo from './logo.svg';
 
@@ -17,7 +17,7 @@ const App = () => (
     <Grid container alignItems="center" justify="center">
       {/* <Companies /> */}
     </Grid>
-    <MemberGroup />
+    <Members />
   </div>
 );
 
