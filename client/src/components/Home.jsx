@@ -1,16 +1,7 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import ReactFullpage from "@fullpage/react-fullpage";
-
-class MySection extends React.Component {
-  render() {
-    return (
-      <div className="section">
-        <h3>{this.props.content}</h3>
-      </div>
-    );
-  }
-}
+import Section from "./Section.jsx";
 
 export default class Home extends Component {
   constructor(props) {
@@ -25,9 +16,9 @@ export default class Home extends Component {
         render={({ state, fullpageApi }) => {
           return (
             <div>
-              <MySection content={"Slide down!"} />
-              <MySection content={"Keep going!"} />
-              <MySection content={"Slide up!"} />
+              <Section />
+              <Section />
+              <Section />
             </div>
           );
         }}
