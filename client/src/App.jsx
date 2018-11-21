@@ -5,6 +5,7 @@ import Companies from './components/Companies';
 import logo from './logo.svg';
 
 import './css/App.css';
+import './fonts.css';
 
 const App = () => (
   <div className="App">
