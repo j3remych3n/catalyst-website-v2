@@ -10,7 +10,7 @@ const App = () => (
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title"> Tooday is the best day to take too many Ls. </h1>
+      <h1 className="App-title">Hello World</h1>
     </header>
     <Grid container alignItems="center" justify="center">
       <Companies />
