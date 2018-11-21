@@ -10,6 +10,16 @@ const members = [
   { name: 'Ben Hubsch3', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
   { name: 'Ben Hubsch4', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
   { name: 'Ben Hubsch5', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
+  { name: 'Ben Hubsch6', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
+  { name: 'Ben Hubsch7', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
+  { name: 'Ben Hubsch8', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
+  { name: 'Ben Hubsch9', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
+  { name: 'Ben Hubsch10', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
+  { name: 'Ben Hubsch11', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
+  { name: 'Ben Hubsch12', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
+  { name: 'Ben Hubsch13', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
+  { name: 'Ben Hubsch14', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
+  { name: 'Ben Hubsch15', imageSrc: 'https://image.ibb.co/bQBKnA/24902379.png' },
 ];
 
 export default class MemberGroup extends Component {
@@ -28,7 +38,7 @@ export default class MemberGroup extends Component {
     const firstHalf = members.slice(0, half);
     const secondHalf = members.slice(half);
     return (
-      <>
+      <div className="MemberGroup-container">
         <div className="MemberGroup-row">
           {firstHalf.map(member => (
             <MemberPreview
@@ -49,7 +59,7 @@ export default class MemberGroup extends Component {
             />
           ))}
         </div>
-      </>
+      </div>
     );
   }
 }
