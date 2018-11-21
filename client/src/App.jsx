@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Companies from './components/Companies';
+import CompanyCarousel from './components/CompanyCarousel';
 
 import logo from './logo.svg';
 
@@ -14,6 +15,9 @@ const App = () => (
     </header>
     <Grid container alignItems="center" justify="center">
       <Companies />
+    </Grid>
+    <Grid container style={{ backgroundColor: 'pink' }}>
+      <CompanyCarousel />
     </Grid>
   </div>
 );

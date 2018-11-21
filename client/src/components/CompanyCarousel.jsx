@@ -3,15 +3,18 @@ import Grid from '@material-ui/core/Grid';
 import Slider from 'react-slick';
 import axios from 'axios';
 import uuidv1 from 'uuid/v1';
+import LeftArrow from './CompanyCarouselLeftArrow';
+import RightArrow from './CompanyCarouselRightArrow';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../css/CompanyCarousel.css';
+import '../css/CompanyCarousel-arrow.css';
 
 const carouselSettings = {
   accessibility: true,
   autoplay: true,
-  arrows: true,
+  arrows: false,
   dots: false,
   infinite: true,
   pauseOnHover: false,
@@ -44,6 +47,8 @@ const carouselSettings = {
 export default class CompanyCarousel extends Component {
   constructor(props) {
     super(props);
+    this.next = this.next.bind(this);
+    this.prev = this.prev.bind(this);
 
     this.state = {
       companies: [],
@@ -55,11 +60,26 @@ export default class CompanyCarousel extends Component {
       .catch(() => {});
   }
 
+  next() {
+    this.slider.slickNext();
+  }
+
+  prev() {
+    this.slider.slickPrev();
+  }
+
   render() {
     const { companies } = this.state;
     return (
       <Grid item xs={6} className="carouselContainer">
-        <Slider {...carouselSettings}>
+        <LeftArrow onClick={this.prev} />
+        <RightArrow onClick={this.next} />
+        <Slider
+          ref={(c) => {
+            this.slider = c;
+          }}
+          {...carouselSettings}
+        >
           {companies.map(company => (
             <div key={uuidv1()}>
               <img src={company} alt="" className="logo" />
