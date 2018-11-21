@@ -1,0 +1,11 @@
+.MemberPreview-picture {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid #000;
+  transition: transform 0.25s;
+}
+
+.MemberPreview-picture:hover {
+  transform: scale(1.05);
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Companies from './components/Companies';
+import MemberPreview from './components/member-choice/MemberPreview';
 
 import logo from './logo.svg';
 
@@ -16,8 +17,9 @@ const App = () => (
       </h1>
     </header>
     <Grid container alignItems="center" justify="center">
-      <Companies />
+      {/* <Companies /> */}
     </Grid>
+    <MemberPreview />
   </div>
 );
 
