@@ -831,6 +831,13 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@fullpage/react-fullpage@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@fullpage/react-fullpage/-/react-fullpage-0.1.3.tgz#e6f7e9f19162af28b3b73fdcf859ff7158460dc1"
+  integrity sha512-NwfJHRpzp2rmCJfFCca5pBt5eMh5icPQ1//EpUH1KehrY1Ui52ODAMLS9ap6wMiftGw8+MI4bvscU00MITHgxg==
+  dependencies:
+    fullpage.js "^3.0.3"
+
 "@material-ui/core@^3.2.2":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-3.2.2.tgz#5c622eeda8851a37a46d27583f0d6624e8ec4732"
@@ -4115,6 +4122,13 @@ fsevents@1.2.4, fsevents@^1.2.2, fsevents@^1.2.3:
   dependencies:
     nan "^2.9.2"
     node-pre-gyp "^0.10.0"
+
+fullpage.js@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/fullpage.js/-/fullpage.js-3.0.3.tgz#d52b7960eab96fc3e8aeed3282392df031ed6c89"
+  integrity sha512-ZdjSQJXrOTWqipw9jRY7IHo6FUEShNvsoc5n+CsQpdLafz0R/4HlhVfKUugBEBwg4p4b/fn3P90V8BZbOOsA7w==
+  dependencies:
+    jquery "^3.3.1"
 
 function-bind@^1.1.0, function-bind@^1.1.1:
   version "1.1.1"
