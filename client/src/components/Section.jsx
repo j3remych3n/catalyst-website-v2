@@ -13,7 +13,7 @@ export default class Section extends Component {
         justify="center"
         alignItems="center"
       >
-        //left
+        {/* left */}
         <Grid
           style={{ minHeight: "100%", backgroundColor: "white" }}
           item
@@ -26,7 +26,7 @@ export default class Section extends Component {
             alignItems="center"
           />
         </Grid>
-        //right
+        {/* right */}
         <Grid item xs={9}>
           <Grid container>
             <Paper style={{ minWidth: "100%", minHeight: "100%" }}> aaa </Paper>
