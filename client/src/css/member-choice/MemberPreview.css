@@ -1,16 +1,35 @@
+.MemberPreview-member {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+.MemberPreview-member:focus {
+  outline: none;
+}
+
 .MemberPreview-picture {
-  width: 100px;
-  height: auto;
+  width: 131.25px;
+  height: 131.25px;
   border-radius: 50%;
+  transition: opacity 0.25s;
+}
+
+.MemberPreview-unselected {
   border: 1px solid #000;
-  transition: transform 0.25s;
+  margin: 5px;
+}
+
+.MemberPreview-selected {
+  border: 3px solid #ff7b7b;
+  margin: 3px;
 }
 
 .MemberPreview-picture:hover {
-  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 .MemberPreview-name {
-  font-size: 10pt;
+  font-size: 15.75pt;
   color: #000;
 }
