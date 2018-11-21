@@ -6,6 +6,7 @@ import MemberGroup from './components/member-choice/MemberGroup';
 import logo from './logo.svg';
 
 import './css/App.css';
+import './fonts.css';
 
 const App = () => (
   <div className="App">
