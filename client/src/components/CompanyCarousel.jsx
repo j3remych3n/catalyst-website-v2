@@ -71,9 +71,8 @@ export default class CompanyCarousel extends Component {
   render() {
     const { companies } = this.state;
     return (
-      <Grid item xs={6} className="carouselContainer">
+      <Grid item xs={8}>
         <LeftArrow onClick={this.prev} />
-        <RightArrow onClick={this.next} />
         <Slider
           ref={(c) => {
             this.slider = c;
@@ -86,6 +85,7 @@ export default class CompanyCarousel extends Component {
             </div>
           ))}
         </Slider>
+        <RightArrow onClick={this.next} />
       </Grid>
     );
   }
