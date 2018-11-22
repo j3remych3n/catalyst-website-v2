@@ -42,7 +42,8 @@ const carouselSettings = {
 
 const styles = {
   imgSize: {
-    maxWidth: 200,
+    maxWidth: 480,
+    maxHeight: 320,
   },
 };
 
@@ -63,11 +64,11 @@ export default class WwdCarousel extends Component {
   render() {
     const { pics } = this.state;
     return (
-      <Grid item style={styles.imgSize}>
+      <Grid item style={{ maxWidth: 480 }}>
         <Slider {...carouselSettings}>
           {pics.map(pic => (
             <div key={uuidv1()}>
-              <img src={pic} alt="" className="Logo-responsive" />
+              <img src={pic} alt="" className="Logo-responsive" style={styles.imgSize} />
             </div>
           ))}
         </Slider>
