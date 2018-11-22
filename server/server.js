@@ -11,7 +11,6 @@ app.get('/api/members', (req, res) => {
   catalystDb(TABLE_NAME)
     .select()
     .all((err, data) => {
-      console.log(data);
       res.send({
         members: data
           .map(member => member.fields)
