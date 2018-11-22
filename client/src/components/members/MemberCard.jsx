@@ -127,7 +127,7 @@ function MemberCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions style={{ justifyContent: 'center' }}>
+      <CardActions style={{ justifyContent: 'flex-end' }}>
         {gitbutton}
         {libutton}
         {personalbutton}

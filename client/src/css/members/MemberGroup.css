@@ -6,6 +6,7 @@
 .MemberGroup-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  text-align: center;
 }
 
 /* SCROLLBAR -- Not supported on Firefox/Edge */
