@@ -41,9 +41,10 @@ const carouselSettings = {
 };
 
 const styles = {
-  imgSize: {
+  images: {
     maxWidth: 480,
     maxHeight: 320,
+    borderRadius: 7,
   },
 };
 
@@ -68,7 +69,7 @@ export default class WwdCarousel extends Component {
         <Slider {...carouselSettings}>
           {pics.map(pic => (
             <div key={uuidv1()}>
-              <img src={pic} alt="" className="Logo-responsive" style={styles.imgSize} />
+              <img src={pic} alt="" className="Logo-resp" style={styles.images} />
             </div>
           ))}
         </Slider>

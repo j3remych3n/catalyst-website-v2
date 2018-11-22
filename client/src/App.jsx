@@ -6,6 +6,7 @@ import logo from './logo.svg';
 
 import './css/App.css';
 import './fonts.css';
+import WwdCarousel from './components/WwdCarousel';
 
 const App = () => (
   <div className="App">
@@ -16,6 +17,13 @@ const App = () => (
     <Grid container alignItems="center" justify="center">
       <Companies />
     </Grid>
+    <Grid container justify="center">
+      <WwdCarousel />
+    </Grid>
+    {/* <Grid container alignItems="center" justify="center">
+      <WwdCarousel />
+    </Grid>
+    <WwdCarousel /> */}
   </div>
 );
 
