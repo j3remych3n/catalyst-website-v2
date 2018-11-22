@@ -17,13 +17,9 @@ const App = () => (
     <Grid container alignItems="center" justify="center">
       <Companies />
     </Grid>
-    <Grid container justify="center">
+    <Grid container alignItems="center" justify="center" style={{ backgroundColor: 0x3e3a6d }}>
       <WwdCarousel />
     </Grid>
-    {/* <Grid container alignItems="center" justify="center">
-      <WwdCarousel />
-    </Grid>
-    <WwdCarousel /> */}
   </div>
 );
 

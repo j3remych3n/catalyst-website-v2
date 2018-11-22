@@ -65,7 +65,7 @@ export default class WwdCarousel extends Component {
   render() {
     const { pics } = this.state;
     return (
-      <Grid item style={{ maxWidth: 480 }}>
+      <Grid item style={{ width: 480 }}>
         <Slider {...carouselSettings}>
           {pics.map(pic => (
             <div key={uuidv1()}>
