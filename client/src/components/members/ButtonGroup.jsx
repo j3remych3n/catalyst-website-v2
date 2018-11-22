@@ -31,6 +31,7 @@ export default class ButtonGroup extends Component {
             onKeyDown={() => {}}
             role="button"
             tabIndex={0}
+            key={choice}
           >
             {choice}
           </div>

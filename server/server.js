@@ -11,7 +11,21 @@ app.get('/api/members', (req, res) => {
   catalystDb(TABLE_NAME)
     .select()
     .all((err, data) => {
-      res.send({ names: data.map(member => member.fields.Name).filter(name => name) });
+      console.log(data);
+      res.send({
+        members: data
+          .map(member => member.fields)
+          .filter(properties => properties.Status !== 'Alumnus') // needs to be updated in the Airtable annually
+          .map(properties => ({
+            name: properties.Name,
+            imageSrc: properties.Photo[0].url,
+            year: properties.Year,
+            giturl: properties.Github,
+            linkedinurl: properties.LinkedIn,
+            bio: properties.bio,
+            personalurl: properties['Personal Website'],
+          })),
+      });
     });
 });
 
