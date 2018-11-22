@@ -28,6 +28,19 @@ export default class Section extends Component {
             <Paper style={{ minWidth: "100%", minHeight: "100%" }}> aaa </Paper>
           </Grid>
         </Grid>
+        <svg
+          width="1920"
+          height="1249"
+          viewBox="0 0 1920 1249"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M-51 0C664.998 280.292 1365.31 332.292 1924.49 184.125C2483.67 35.9576 2345.49 826.803 1710.9 1033.36C1076.3 1239.92 515.498 609.254 -51 1249V0Z"
+            fill="#FF7B7B"
+            fill-opacity="0.13"
+          />
+        </svg>
       </Grid>
     );
   }

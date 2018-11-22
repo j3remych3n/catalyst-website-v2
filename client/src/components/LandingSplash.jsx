@@ -3,6 +3,7 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import "../fonts.css";
+import chevron from "../assets/chevron.svg";
 import colors from "../colors.js";
 
 const style = {
