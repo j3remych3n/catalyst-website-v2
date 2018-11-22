@@ -22,7 +22,10 @@ export default class MemberGroup extends Component {
             <MemberPreview
               key={member.name}
               isSelected={member.name === selected}
-              onSelect={() => onSelect(member)}
+              onSelect={() => {
+                this.setState({ selected: member.name });
+                onSelect(member);
+              }}
               {...member}
             />
           ))}
@@ -32,7 +35,10 @@ export default class MemberGroup extends Component {
             <MemberPreview
               key={member.name}
               isSelected={member.name === selected}
-              onSelect={() => onSelect(member)}
+              onSelect={() => {
+                this.setState({ selected: member.name });
+                onSelect(member);
+              }}
               {...member}
             />
           ))}

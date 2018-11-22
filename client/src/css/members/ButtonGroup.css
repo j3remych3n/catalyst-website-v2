@@ -12,11 +12,12 @@
 }
 
 .ButtonGroup-choice:hover {
-  border-bottom: 3px solid #ff4e72;
+  border-bottom: 3px solid #ff7b7b;
 }
 
 .ButtonGroup-selected {
-  border-bottom: 3px solid #ff4e72;
+  border-bottom: 3px solid #ff7b7b;
+  font-weight: bold;
 }
 
 .ButtonGroup-unselected {

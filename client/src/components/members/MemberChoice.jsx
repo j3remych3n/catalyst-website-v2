@@ -27,10 +27,10 @@ export default class MemberChoice extends Component {
     const { years, membersByYear, chosenYear } = this.state;
     const { onSelect } = this.props;
     return (
-      <>
+      <div className="MemberChoice-container">
         <ButtonGroup choices={years} chooseYear={year => this.setState({ chosenYear: year })} />
         <MemberGroup members={membersByYear[chosenYear]} onSelect={onSelect} />
-      </>
+      </div>
     );
   }
 }

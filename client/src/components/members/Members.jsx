@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import MemberCard from './MemberCard';
 import MemberChoice from './MemberChoice';
 
+import '../../css/members/Members.css';
+
 const members = [
   {
     name: 'Ben Hubsch1',
@@ -160,10 +162,10 @@ export default class Members extends Component {
   render() {
     const { selected } = this.state;
     return (
-      <>
-        <MemberChoice members={members} onSelect={chosen => this.setState({ selected: chosen })} />
+      <div className="Members-container">
         <MemberCard selected={selected} />
-      </>
+        <MemberChoice members={members} onSelect={chosen => this.setState({ selected: chosen })} />
+      </div>
     );
   }
 }
