@@ -14,11 +14,7 @@ export default class Section extends Component {
         alignItems="center"
       >
         {/* left */}
-        <Grid
-          style={{ minHeight: "100%", backgroundColor: "white" }}
-          item
-          xs={3}
-        >
+        <Grid style={{ minHeight: "100%" }} item xs={3}>
           <Grid
             container
             direction="column"
