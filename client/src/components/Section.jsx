@@ -41,7 +41,6 @@ export default class Section extends Component {
           container
           direction="row"
           justify="center"
-          alignItems="left"
           minHeight="100%"
           style={{
             backgroundColor: "pink"
