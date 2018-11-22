@@ -23,10 +23,17 @@ const styles = {
   },
   name: {
     textAlign: 'left',
+    fontFamily: 'GlacialIndifference',
   },
   year: {
+    fontFamily: 'Nunito',
     textAlign: 'right',
     color: '#ff7b7b',
+  },
+  bio: {
+    fontFamily: 'Nunito',
+    fontSize: '12pt',
+    textAlign: 'left',
   },
 };
 
@@ -115,7 +122,9 @@ function MemberCard(props) {
               </Typography>
             </Grid>
           </Grid>
-          <Typography component="p">{bio}</Typography>
+          <Typography component="p" style={styles.bio}>
+            {bio}
+          </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions style={{ justifyContent: 'center' }}>

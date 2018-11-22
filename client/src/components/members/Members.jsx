@@ -3,6 +3,7 @@ import MemberCard from './MemberCard';
 import MemberChoice from './MemberChoice';
 
 import '../../css/members/Members.css';
+import catalystLogo from '../../assets/chevron.svg';
 
 const members = [
   {
@@ -142,20 +143,21 @@ const members = [
   },
 ];
 
+const DEFAULT_CARD = {
+  name: 'Duke Catalyst',
+  imageSrc: catalystLogo,
+  year: '2019',
+  giturl: '',
+  linkedinurl: '',
+  personalurl: '',
+  bio: "Duke's first social and pre-professional tech organization.",
+};
+
 export default class Members extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: {
-        name: 'Dummy DumDum',
-        imageSrc:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/1200px-Lion_waiting_in_Namibia.jpg',
-        year: '2019',
-        giturl: 'https://github.com',
-        linkedinurl: 'https://www.linkedin.com',
-        personalurl: 'https://www.google.com',
-        bio: 'This is my bio dummy',
-      },
+      selected: DEFAULT_CARD,
     };
   }
 
