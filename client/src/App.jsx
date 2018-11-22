@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Companies from './components/Companies';
+// import Companies from './components/Companies';
 import Members from './components/members/Members';
 
 import logo from './logo.svg';

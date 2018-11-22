@@ -11,6 +11,8 @@ import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Grid from '@material-ui/core/Grid';
 
+import '../../css/members/MemberCard.css';
+
 const styles = {
   card: {
     maxWidth: 300,
@@ -34,6 +36,9 @@ const styles = {
     fontFamily: 'Nunito',
     fontSize: '12pt',
     textAlign: 'left',
+  },
+  actions: {
+    justifyContent: 'flex-end',
   },
 };
 
@@ -99,7 +104,7 @@ function MemberCard(props) {
     );
   }
   return (
-    <Card style={styles.card}>
+    <Card style={styles.card} className="MemberCard-card">
       <CardActionArea style={{ color: 'transparent' }}>
         <CardMedia
           style={styles.media}
@@ -127,7 +132,7 @@ function MemberCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions style={{ justifyContent: 'flex-end' }}>
+      <CardActions style={styles.actions}>
         {gitbutton}
         {libutton}
         {personalbutton}
