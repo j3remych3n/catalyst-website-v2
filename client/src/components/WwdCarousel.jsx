@@ -18,6 +18,8 @@ const carouselSettings = {
   dots: false,
   speed: 1000,
   arrows: true,
+  fade: true,
+  adaptiveHeight: true,
   responsive: [
     {
       breakpoint: 1024,
@@ -44,8 +46,8 @@ const carouselSettings = {
 
 const styles = {
   images: {
-    maxWidth: 480,
-    maxHeight: 320,
+    width: "80%",
+    height: "100%",
     borderRadius: 7
   }
 };

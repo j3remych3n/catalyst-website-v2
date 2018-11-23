@@ -24,6 +24,11 @@ export default class Home extends Component {
               <Section
                 titleWhite={"What we "}
                 titlePink={"do()"}
+                leftComponent={
+                  <div>
+                    <WwdCarousel />
+                  </div>
+                }
                 bodyComponent={
                   <BodyWrapper
                     style={{ minHeight: "100%", minWidth: "100%" }}
