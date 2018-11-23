@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Section from "./Section.jsx";
 import LandingSplash from "./LandingSplash.jsx";
+import BodyWrapper from "./BodyWrapper.jsx";
 
 export default class Home extends Component {
   constructor(props) {
@@ -18,6 +19,28 @@ export default class Home extends Component {
           return (
             <div>
               <LandingSplash />
+
+              <Section
+                titleWhite={"What we "}
+                titlePink={"do()"}
+                bodyComponent={
+                  <BodyWrapper
+                    style={{ minHeight: "100%", minWidth: "100%" }}
+                    basic={true}
+                  >
+                    <span>
+                      At Catalyst, we organize and host both pre-professional
+                      and social events. Some pre-professional events we've
+                      hosted in the past include resume workshops, tutorial
+                      workshops, and guest speakers. Social events include
+                      casual dinners, parties, and SkyZone.
+                    </span>
+                  </BodyWrapper>
+                }
+                widthRatio={4}
+                heightRatio={3}
+              />
+
               <Section
                 leftComponent={
                   <div>
@@ -38,31 +61,6 @@ export default class Home extends Component {
                   </div>
                 }
                 widthRatio={3}
-                heightRatio={3}
-              />
-
-              <Section
-                leftComponent={
-                  <div>
-                    <img
-                      src="https://dtech.duke.edu/sites/dtech.duke.edu/files/styles/scholar_grid_thumbnail/public/DTech51.JPG"
-                      alt="Jane"
-                    />
-                  </div>
-                }
-                titleWhite={"What we "}
-                titlePink={"do()"}
-                bodyComponent={
-                  <h2>
-                    {" "}
-                    At Catalyst, we organize and host both pre-professional and
-                    social events. Some pre-professional events we've hosted in
-                    the past include resume workshops, tutorial workshops, and
-                    guest speakers. Social events include casual dinners,
-                    parties, and SkyZone.{" "}
-                  </h2>
-                }
-                widthRatio={4}
                 heightRatio={3}
               />
 
