@@ -2,76 +2,105 @@ import PropTypes from "prop-types"; // ES6
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 
 const styles = {
   left: {
-    height: 500,
     backgroundColor: "#3e3a6d",
     minHeight: "100%",
-    color: "white"
+    minWidth: "100%",
+    color: "white",
+    display: "inline-block"
   },
 
   rightTop: {
     backgroundColor: "#ef827f",
     minHeight: "20%",
-    color: "white"
+    minWidth: "100%",
+    color: "white",
+    display: "inline-block"
   },
 
   rightBottom: {
     marginTop: "0",
+    marginBottom: "0",
     backgroundColor: "#fbe79e",
     minHeight: "80%",
-    color: "white"
+    minWidth: "100%",
+    color: "white",
+    display: "inline-block"
+  },
+
+  pinkPart: {
+    color: "orange"
   }
 };
 
-const pink = "#ef827f";
-const lightblue = "#ef827f";
-const blue = "#24306c";
-const yellow = "#fbe79e";
-const purple = "#3e3a6d";
-const gray = "#555555";
-const white = "#ffffff";
-
 export default class Section extends Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props.leftComponent);
+  }
+
   render() {
     return (
       <div className="section">
         <Grid
           container
-          direction="row"
-          justify="center"
-          minHeight="100%"
           style={{
             backgroundColor: "pink"
           }}
+          xs={12}
         >
           <Grid
             item
-            minHeight="100%"
             style={{
-              backgroundColor: "gray"
+              backgroundColor: "gray",
+              minHeight: "100%"
             }}
-            xs={4}
+            xs={3}
           >
-            <Paper style={styles.left}> LEFT COMPONENT </Paper>
+            <Paper style={styles.left}>
+              <Typography style={{ color: "white" }}>
+                {this.props.leftComponent}
+              </Typography>
+            </Paper>
           </Grid>
 
           <Grid
             item
-            minHeight="100%"
             style={{
               backgroundColor: "black"
             }}
-            xs={8}
+            xs={9}
           >
-            <Paper style={styles.rightTop}> RIGHT TOP COMPONENT </Paper>
-            <Paper style={styles.rightBottom}> RIGHT BOTTOM COMPONENT </Paper>
+            <Grid item>
+              <Paper style={styles.rightTop}>
+                <span>
+                  {this.props.titleWhite}
+                  <span style={styles.pinkPart}> {this.props.titlePink} </span>
+                </span>
+              </Paper>
+            </Grid>
+
+            <Grid item>
+              <Paper style={styles.rightBottom}>
+                {this.props.bodyComponent}
+              </Paper>
+            </Grid>
           </Grid>
         </Grid>
       </div>
     );
   }
 }
+Section.propTypes = {
+  leftComponent: PropTypes.element,
+  titleWhite: PropTypes.string.isRequired,
+  titlePink: PropTypes.string.isRequired,
+  bodyComponent: PropTypes.element,
+  widthRatio: PropTypes.number,
+  heightRatio: PropTypes.number
+};
 
 // width: 200, height: 200,

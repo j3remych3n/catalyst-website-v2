@@ -16,9 +16,23 @@ export default class Home extends Component {
         render={({ state, fullpageApi }) => {
           return (
             <div>
-              <Section />
-              <Section />
-              <Section />
+              <Section
+                leftComponent={<h1> TO THE LEFT </h1>}
+                titleWhite={"members"}
+                titlePink={"[]"}
+                bodyComponent={<h1> BOOM </h1>}
+                widthRatio={4}
+                heightRatio={3}
+              />
+
+              <Section
+                leftComponent={<h1> TO THE LEFT </h1>}
+                titleWhite={"members"}
+                titlePink={"[]"}
+                bodyComponent={<h1> BOOM </h1>}
+                widthRatio={4}
+                heightRatio={3}
+              />
             </div>
           );
         }}
