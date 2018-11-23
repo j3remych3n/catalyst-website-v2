@@ -50,7 +50,8 @@ export default class Section extends Component {
         <Grid
           container
           style={{
-            backgroundColor: "pink"
+            backgroundColor: "pink",
+            minHeight: "50%"
           }}
           xs={12}
         >
@@ -62,11 +63,7 @@ export default class Section extends Component {
             }}
             xs={3}
           >
-            <Paper style={styles.left}>
-              <Typography style={{ color: "white" }}>
-                {this.props.leftComponent}
-              </Typography>
-            </Paper>
+            <Paper style={styles.left}>{this.props.leftComponent}</Paper>
           </Grid>
 
           <Grid

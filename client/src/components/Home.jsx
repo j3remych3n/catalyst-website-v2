@@ -40,7 +40,24 @@ export default class Home extends Component {
               />
 
               <Section
-                leftComponent={<h1> TO THE LEFT </h1>}
+                leftComponent={
+                  <div>
+                    <h1> JANE LI </h1>
+                  </div>
+                }
+                titleWhite={"members"}
+                titlePink={"[]"}
+                bodyComponent={<h1> BOOM </h1>}
+                widthRatio={4}
+                heightRatio={3}
+              />
+
+              <Section
+                leftComponent={
+                  <div>
+                    <h1> JANE LI </h1>
+                  </div>
+                }
                 titleWhite={"members"}
                 titlePink={"[]"}
                 bodyComponent={<h1> BOOM </h1>}
