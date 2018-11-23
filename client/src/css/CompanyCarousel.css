@@ -7,12 +7,15 @@
   margin-bottom: 20px;
 }
 
+.logo-container {
+  width: 50px;
+}
+
 .carouselContainer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-width: 0;
-  min-height: 0;
+  max-width: 50%;
 }
 
 .carousel {
