@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Section from "./Section.jsx";
 import LandingSplash from "./LandingSplash.jsx";
+import WwdCarousel from "./WwdCarousel.jsx";
 
 export default class Home extends Component {
   constructor(props) {
@@ -43,11 +44,8 @@ export default class Home extends Component {
 
               <Section
                 leftComponent={
-                  <div>
-                    <img
-                      src="https://dtech.duke.edu/sites/dtech.duke.edu/files/styles/scholar_grid_thumbnail/public/DTech51.JPG"
-                      alt="Jane"
-                    />
+                  <div align="center" verticalAlign="center">
+                    <WwdCarousel />
                   </div>
                 }
                 titleWhite={"What we "}
