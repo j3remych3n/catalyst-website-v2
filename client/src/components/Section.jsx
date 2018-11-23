@@ -14,18 +14,16 @@ const styles = {
   },
 
   rightTop: {
-    backgroundColor: "#ef827f",
-    minHeight: "20%",
+    backgroundColor: "#479fcc",
+    minHeight: "100%",
     minWidth: "100%",
     color: "white",
     display: "inline-block"
   },
 
   rightBottom: {
-    marginTop: "0",
-    marginBottom: "0",
-    backgroundColor: "#fbe79e",
-    minHeight: "80%",
+    backgroundColor: "#ef827f",
+    minHeight: "100%",
     minWidth: "100%",
     color: "white",
     display: "inline-block"
@@ -33,6 +31,10 @@ const styles = {
 
   pinkPart: {
     color: "orange"
+  },
+
+  title: {
+    fontSize: 39
   }
 };
 
@@ -74,16 +76,28 @@ export default class Section extends Component {
             }}
             xs={9}
           >
-            <Grid item>
+            <Grid
+              item
+              style={{
+                height: "20%",
+                display: "inline-block",
+                width: "100%"
+              }}
+            >
               <Paper style={styles.rightTop}>
-                <span>
+                <span style={styles.title}>
                   {this.props.titleWhite}
                   <span style={styles.pinkPart}> {this.props.titlePink} </span>
                 </span>
               </Paper>
             </Grid>
 
-            <Grid item>
+            <Grid
+              item
+              style={{
+                height: "80%"
+              }}
+            >
               <Paper style={styles.rightBottom}>
                 {this.props.bodyComponent}
               </Paper>

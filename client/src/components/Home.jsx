@@ -17,10 +17,24 @@ export default class Home extends Component {
           return (
             <div>
               <Section
-                leftComponent={<h1> TO THE LEFT </h1>}
+                leftComponent={
+                  <div>
+                    <h1> JANE LI </h1>
+                    <h2> Jane sure loves her hamster </h2>
+                    <img
+                      src="https://dtech.duke.edu/sites/dtech.duke.edu/files/styles/scholar_grid_thumbnail/public/DTech51.JPG"
+                      alt="Jane"
+                    />
+                  </div>
+                }
                 titleWhite={"members"}
                 titlePink={"[]"}
-                bodyComponent={<h1> BOOM </h1>}
+                bodyComponent={
+                  <div>
+                    <h2> MEMBER 1 MEMBER 2 MEMBER 3 MEMBER 4 </h2>
+                    <h2> MEMBER 5 MEMBER 6 MEMBER 7 MEMBER 8 </h2>
+                  </div>
+                }
                 widthRatio={4}
                 heightRatio={3}
               />
