@@ -55,7 +55,7 @@ const logos = {
 };
 
 const scaleFontSize = (nameLength) => {
-  if (nameLength < 16) return 20;
+  if (nameLength < 15) return 20;
   if (nameLength < 20) return 15;
   if (nameLength < 25) return 12;
   return 20;

@@ -12,17 +12,23 @@ export default class ButtonGroup extends Component {
     };
   }
 
+  handleClick(choice) {
+    const { chooseYear } = this.props;
+    chooseYear(choice);
+    this.setState({ selected: choice });
+
+    // resets the scrollbar
+    document.getElementsByClassName('MemberGroup-container')[0].scrollLeft = 0;
+  }
+
   render() {
     const { selected } = this.state;
-    const { choices, chooseYear } = this.props;
+    const { choices } = this.props;
     return (
       <div className="ButtonGroup-container">
         {choices.map(choice => (
           <div
-            onClick={() => {
-              chooseYear(choice);
-              this.setState({ selected: choice });
-            }}
+            onClick={() => this.handleClick(choice)}
             className={
               choice === selected
                 ? 'ButtonGroup-choice ButtonGroup-selected'
@@ -42,6 +48,6 @@ export default class ButtonGroup extends Component {
 }
 
 ButtonGroup.propTypes = {
-  choices: PropTypes.arrayOf(PropTypes.Integer).isRequired,
+  choices: PropTypes.arrayOf(PropTypes.number).isRequired,
   chooseYear: PropTypes.func.isRequired,
 };
