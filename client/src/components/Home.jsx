@@ -5,6 +5,15 @@ import Section from "./Section.jsx";
 import LandingSplash from "./LandingSplash.jsx";
 import BodyWrapper from "./BodyWrapper.jsx";
 
+const sectionList = [
+  "home",
+  "what we do",
+  "members",
+  "where we've worked",
+  "faq",
+  "contact"
+];
+
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +30,7 @@ export default class Home extends Component {
               <LandingSplash />
 
               <Section
-                titleWhite={"What we "}
+                titleWhite={"what we "}
                 titlePink={"do()"}
                 bodyComponent={
                   <BodyWrapper

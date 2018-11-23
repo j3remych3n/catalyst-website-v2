@@ -4,10 +4,12 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import colors from "../colors";
+import Delay from "react-delay";
+import Fade from "react-reveal/Fade";
 
 const styles = {
   left: {
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    backgroundColor: "rgba(0, 0, 0, 0.0)",
     minHeight: "100%",
     minWidth: "100%",
     color: "white",
@@ -26,7 +28,7 @@ const styles = {
   },
 
   sectionBody: {
-    backgroundColor: "rgba(100, 255, 255, 0.2)",
+    backgroundColor: "rgba(100, 255, 255, 0.0)",
     minHeight: "100%",
     minWidth: "100%",
     color: "white",
@@ -37,7 +39,7 @@ const styles = {
   },
 
   sectionTitle: {
-    fontSize: "45pt",
+    fontSize: "80pt",
     fontFamily: "GlacialIndifference",
     color: "white"
   },
@@ -59,7 +61,8 @@ export default class Section extends Component {
         <Grid
           container
           style={{
-            minHeight: "80%"
+            minHeight: "75%",
+            paddingRight: "5%"
           }}
           xs={12}
         >
@@ -88,7 +91,9 @@ export default class Section extends Component {
               }}
             >
               <Paper elevation={0} style={styles.left}>
-                {this.props.leftComponent}
+                <Delay wait={1000}>
+                  <Fade>{this.props.leftComponent}</Fade>
+                </Delay>
               </Paper>
             </Grid>
           </Grid>
@@ -102,15 +107,19 @@ export default class Section extends Component {
                 width: "100%"
               }}
             >
-              <Paper elevation={0} style={styles.header}>
-                <span style={styles.sectionTitle}>
-                  {this.props.titleWhite}
-                  <span style={styles.titleAnnotation}>
-                    {" "}
-                    {this.props.titlePink}{" "}
-                  </span>
-                </span>
-              </Paper>
+              <Delay wait={600}>
+                <Fade>
+                  <Paper elevation={0} style={styles.header}>
+                    <span style={styles.sectionTitle}>
+                      {this.props.titleWhite}
+                      <span style={styles.titleAnnotation}>
+                        {" "}
+                        {this.props.titlePink}{" "}
+                      </span>
+                    </span>
+                  </Paper>
+                </Fade>
+              </Delay>
             </Grid>
 
             <Grid
@@ -119,7 +128,9 @@ export default class Section extends Component {
                 height: "80%"
               }}
             >
-              {this.props.bodyComponent}
+              <Delay wait={1000}>
+                <Fade>{this.props.bodyComponent}</Fade>
+              </Delay>
             </Grid>
           </Grid>
         </Grid>
