@@ -4,6 +4,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import Section from "./Section.jsx";
 import LandingSplash from "./LandingSplash.jsx";
 import BodyWrapper from "./BodyWrapper.jsx";
+import WwdCarousel from "./WwdCarousel.jsx";
 
 export default class Home extends Component {
   constructor(props) {
@@ -61,6 +62,28 @@ export default class Home extends Component {
                   </div>
                 }
                 widthRatio={3}
+                heightRatio={3}
+              />
+
+              <Section
+                leftComponent={
+                  <div align="center" verticalAlign="center">
+                    <WwdCarousel />
+                  </div>
+                }
+                titleWhite={"What we "}
+                titlePink={"do()"}
+                bodyComponent={
+                  <h2>
+                    {" "}
+                    At Catalyst, we organize and host both pre-professional and
+                    social events. Some pre-professional events we've hosted in
+                    the past include resume workshops, tutorial workshops, and
+                    guest speakers. Social events include casual dinners,
+                    parties, and SkyZone.{" "}
+                  </h2>
+                }
+                widthRatio={4}
                 heightRatio={3}
               />
 
