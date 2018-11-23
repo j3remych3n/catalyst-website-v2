@@ -5,6 +5,7 @@ import Section from "./Section.jsx";
 import LandingSplash from "./LandingSplash.jsx";
 import BodyWrapper from "./BodyWrapper.jsx";
 import "../overrides.css";
+import Faq from "./Faq.jsx";
 
 const sectionList = ["home", "what we do", "members", "where we've worked"];
 
@@ -17,7 +18,13 @@ export default class Home extends Component {
     return (
       <ReactFullpage
         navigation
-        sectionsColor={["rgba(0,0,0,0)", "#24306c", "#24306c", "#24306c"]}
+        sectionsColor={[
+          "rgba(0,0,0,0)",
+          "#24306c",
+          "#24306c",
+          "#24306c",
+          "#24306c"
+        ]}
         navigationTooltips={sectionList}
         render={({ state, fullpageApi }) => {
           return (
@@ -79,6 +86,13 @@ export default class Home extends Component {
                 titleWhite={"members"}
                 titlePink={"[]"}
                 bodyComponent={<h1> BOOM </h1>}
+                widthRatio={4}
+                heightRatio={3}
+              />
+              <Section
+                titleWhite={"faq"}
+                titlePink={"?"}
+                bodyComponent={<Faq />}
                 widthRatio={4}
                 heightRatio={3}
               />

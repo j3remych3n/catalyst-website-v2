@@ -15,6 +15,15 @@ const styles = {
   txtStyle: {
     color: colors.white,
     display: "inline"
+  },
+  wrapStyle: {
+    minHeight: "100%",
+    minWidth: "100%",
+    addingLeft: "2.5%",
+    marginRight: "5%",
+    margin: "0",
+    paddingTop: "5%",
+    fontFamily: "GlacialIndifference"
   }
 };
 
@@ -40,7 +49,7 @@ export default class Faq extends Component {
     const aTagClose = "</a>";
 
     return (
-      <div align="left">
+      <div style={styles.wrapStyle} align="left">
         {faq.map(pair => (
           <div key={uuidv1()}>
             <div>
@@ -53,6 +62,7 @@ export default class Faq extends Component {
               <div style={styles.txtStyle}>{pair.Value}</div>
               <div style={styles.aTag}>{aTagClose}</div>
             </div>
+            <br />
           </div>
         ))}
       </div>
