@@ -1,24 +1,11 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-// import Companies from './components/Companies';
-import Members from './components/members/Members';
+import React from 'react'
+import Grid from '@material-ui/core/Grid'
+import Companies from './components/Companies'
+import Home from './components/Home'
 
-import logo from './logo.svg';
+import logo from './logo.svg'
+import './css/App.css'
 
-import './css/App.css';
-import './fonts.css';
+const App = () => <Home />
 
-const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">ok</h1>
-    </header>
-    <Grid container alignItems="center" justify="center">
-      {/* <Companies /> */}
-    </Grid>
-    <Members />
-  </div>
-);
-
-export default App;
+export default App
