@@ -42,12 +42,24 @@ export default class Home extends Component {
               <Section
                 leftComponent={
                   <div>
-                    <h1> JANE LI </h1>
+                    <img
+                      src="https://dtech.duke.edu/sites/dtech.duke.edu/files/styles/scholar_grid_thumbnail/public/DTech51.JPG"
+                      alt="Jane"
+                    />
                   </div>
                 }
-                titleWhite={"members"}
-                titlePink={"[]"}
-                bodyComponent={<h1> BOOM </h1>}
+                titleWhite={"What we "}
+                titlePink={"do()"}
+                bodyComponent={
+                  <h2>
+                    {" "}
+                    At Catalyst, we organize and host both pre-professional and
+                    social events. Some pre-professional events we've hosted in
+                    the past include resume workshops, tutorial workshops, and
+                    guest speakers. Social events include casual dinners,
+                    parties, and SkyZone.{" "}
+                  </h2>
+                }
                 widthRatio={4}
                 heightRatio={3}
               />
