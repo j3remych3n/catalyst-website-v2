@@ -17,7 +17,7 @@
 }
 
 .MemberPreview-unselected {
-  border: 1px solid #000;
+  border: 1px solid #fff;
   margin: 5px;
 }
 
@@ -28,10 +28,11 @@
 
 .MemberPreview-picture:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .MemberPreview-name {
   font-family: 'Nunito';
-  color: #000;
+  color: #fff;
   width: 131.25px;
 }

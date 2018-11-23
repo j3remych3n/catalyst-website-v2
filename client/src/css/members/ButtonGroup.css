@@ -13,13 +13,16 @@
 
 .ButtonGroup-choice:hover {
   border-bottom: 3px solid #ff7b7b;
+  cursor: pointer;
 }
 
 .ButtonGroup-selected {
   border-bottom: 3px solid #ff7b7b;
   font-weight: bold;
+  color: #fff;
 }
 
 .ButtonGroup-unselected {
   border-bottom: none;
+  color: rgb(255, 255, 255, 0.65);
 }
