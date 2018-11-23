@@ -13,10 +13,11 @@ export default class Home extends Component {
     return (
       <ReactFullpage
         navigation
-        sectionsColor={["#24306c", "#24306c", "#24306c"]}
+        sectionsColor={["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#24306c", "#24306c"]}
         render={({ state, fullpageApi }) => {
           return (
             <div>
+              <LandingSplash />
               <Section
                 leftComponent={
                   <div>
@@ -77,19 +78,6 @@ export default class Home extends Component {
                 widthRatio={4}
                 heightRatio={3}
               />
-        sectionsColor={[
-          "rgba(0,0,0,0)",
-          "rgba(0,0,0,0)",
-          "rgba(0,0,0,0)",
-          "#24306c"
-        ]}
-        render={({ state, fullpageApi }) => {
-          return (
-            <div>
-              <LandingSplash />
-              <Section />
-              <Section />
-              <Section />
             </div>
           );
         }}
