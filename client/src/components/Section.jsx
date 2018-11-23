@@ -3,38 +3,47 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import colors from "../colors";
 
 const styles = {
   left: {
-    backgroundColor: "#3e3a6d",
+    backgroundColor: "rgba(0, 0, 0, 0.2)",
     minHeight: "100%",
     minWidth: "100%",
     color: "white",
-    display: "inline-block"
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
 
-  rightTop: {
-    backgroundColor: "#479fcc",
+  header: {
+    backgroundColor: "rgba(255, 255, 255, 0.0)",
+    minHeight: "100%",
+    minWidth: "100%",
+    display: "flex",
+    alignItems: "center",
+    paddingLeft: "2.5%"
+  },
+
+  sectionBody: {
+    backgroundColor: "rgba(100, 255, 255, 0.2)",
     minHeight: "100%",
     minWidth: "100%",
     color: "white",
-    display: "inline-block"
+    display: "flex",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
 
-  rightBottom: {
-    backgroundColor: "#ef827f",
-    minHeight: "100%",
-    minWidth: "100%",
-    color: "white",
-    display: "inline-block"
+  sectionTitle: {
+    fontSize: "45pt",
+    fontFamily: "GlacialIndifference",
+    color: "white"
   },
 
-  pinkPart: {
-    color: "orange"
-  },
-
-  title: {
-    fontSize: 39
+  titleAnnotation: {
+    color: colors.pink
   }
 };
 
@@ -50,28 +59,16 @@ export default class Section extends Component {
         <Grid
           container
           style={{
-            backgroundColor: "pink",
-            minHeight: "50%"
+            minHeight: "80%"
           }}
           xs={12}
         >
           <Grid
             item
             style={{
-              backgroundColor: "gray",
               minHeight: "100%"
             }}
             xs={this.props.widthRatio}
-          >
-            <Paper style={styles.left}>{this.props.leftComponent}</Paper>
-          </Grid>
-
-          <Grid
-            item
-            style={{
-              backgroundColor: "black"
-            }}
-            xs={12 - this.props.widthRatio}
           >
             <Grid
               item
@@ -81,10 +78,37 @@ export default class Section extends Component {
                 width: "100%"
               }}
             >
-              <Paper style={styles.rightTop}>
-                <span style={styles.title}>
+              <Paper elevation={0} style={styles.header} />
+            </Grid>
+
+            <Grid
+              item
+              style={{
+                height: "80%"
+              }}
+            >
+              <Paper elevation={0} style={styles.left}>
+                {this.props.leftComponent}
+              </Paper>
+            </Grid>
+          </Grid>
+
+          <Grid item style={{}} xs={12 - this.props.widthRatio}>
+            <Grid
+              item
+              style={{
+                height: "20%",
+                display: "inline-block",
+                width: "100%"
+              }}
+            >
+              <Paper elevation={0} style={styles.header}>
+                <span style={styles.sectionTitle}>
                   {this.props.titleWhite}
-                  <span style={styles.pinkPart}> {this.props.titlePink} </span>
+                  <span style={styles.titleAnnotation}>
+                    {" "}
+                    {this.props.titlePink}{" "}
+                  </span>
                 </span>
               </Paper>
             </Grid>
@@ -95,9 +119,7 @@ export default class Section extends Component {
                 height: "80%"
               }}
             >
-              <Paper style={styles.rightBottom}>
-                {this.props.bodyComponent}
-              </Paper>
+              {this.props.bodyComponent}
             </Grid>
           </Grid>
         </Grid>
@@ -111,7 +133,5 @@ Section.propTypes = {
   titlePink: PropTypes.string.isRequired,
   bodyComponent: PropTypes.element,
   widthRatio: PropTypes.number,
-  heightRatio: PropTypes.number
+  hideLeft: PropTypes.boolean
 };
-
-// width: 200, height: 200,
