@@ -5,6 +5,8 @@ const { catalystDb, websiteV2 } = require('./airtable-init');
 const app = express();
 const port = process.env.PORT || 5000;
 
+const MAX_BIO_LENGTH = 75;
+
 // API calls
 app.get('/api/members', (req, res) => {
   const TABLE_NAME = 'Roster';
@@ -21,7 +23,9 @@ app.get('/api/members', (req, res) => {
             year: properties.Year,
             giturl: properties.Github,
             linkedinurl: properties.LinkedIn,
-            bio: properties.Bio,
+            bio: properties.Bio
+              ? properties.Bio.substring(0, MAX_BIO_LENGTH)
+              : 'This is a default bio that is used for testing.',
             personalurl: properties['Personal Website'],
           })),
       });

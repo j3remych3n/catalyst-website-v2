@@ -10,7 +10,6 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Grid from '@material-ui/core/Grid';
-import { scaleFontSize } from './MemberPreview';
 
 import '../../css/members/MemberCard.css';
 
@@ -27,12 +26,13 @@ const styles = {
   name: {
     textAlign: 'left',
     fontFamily: 'GlacialIndifference',
-    fontSize: '12pt',
+    color: 'black',
   },
   year: {
     fontFamily: 'Nunito',
     textAlign: 'right',
     color: '#ff7b7b',
+    minHeight: '35px',
   },
   bio: {
     fontFamily: 'Nunito',
@@ -54,6 +54,13 @@ const logos = {
     'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z',
 };
 
+const scaleFontSize = (nameLength) => {
+  if (nameLength < 16) return 20;
+  if (nameLength < 20) return 15;
+  if (nameLength < 25) return 12;
+  return 20;
+};
+
 function MemberCard(props) {
   const { selected } = props;
   const {
@@ -63,6 +70,14 @@ function MemberCard(props) {
   let gitbutton = null;
   let libutton = null;
   let personalbutton = null;
+  // NOTE: dummybutton used to standardize card sizes for members who have no social urls
+  const dummybutton = (
+    <IconButton disabled>
+      <SvgIcon>
+        <path />
+      </SvgIcon>
+    </IconButton>
+  );
 
   if (giturl) {
     gitbutton = (
@@ -106,16 +121,15 @@ function MemberCard(props) {
           <Grid container justify="space-between" alignItems="center">
             <Grid item>
               <Typography
-                gutterBottom
                 variant="h5"
                 component="h2"
-                style={({ ...styles.name }, { fontSize: `${scaleFontSize(name.length)}pt` })}
+                style={{ ...styles.name, fontSize: `${scaleFontSize(name.length)}pt` }}
               >
                 {name}
               </Typography>
             </Grid>
             <Grid item>
-              <Typography gutterBottom variant="h5" component="h2" style={styles.year}>
+              <Typography variant="h5" component="h2" style={styles.year}>
                 {year}
               </Typography>
             </Grid>
@@ -126,6 +140,7 @@ function MemberCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions style={styles.actions}>
+        {dummybutton}
         {gitbutton}
         {libutton}
         {personalbutton}
@@ -139,8 +154,8 @@ MemberCard.propTypes = {
     giturl: PropTypes.string,
     linkedinurl: PropTypes.string,
     personalurl: PropTypes.string,
+    bio: PropTypes.string,
     imageSrc: PropTypes.string.isRequired,
-    bio: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   }).isRequired,

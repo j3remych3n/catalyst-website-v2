@@ -4,13 +4,6 @@ import { Textfit } from 'react-textfit';
 
 import '../../css/members/MemberPreview.css';
 
-export const scaleFontSize = (l) => {
-  if (l < 15) return 15;
-  if (l < 20) return 13;
-  if (l < 30) return 10;
-  return 15;
-};
-
 const MemberPreview = (props) => {
   const {
     name, imageSrc, isSelected, onSelect,
