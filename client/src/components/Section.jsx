@@ -119,9 +119,7 @@ export default class Section extends Component {
                 height: "80%"
               }}
             >
-              <Paper elevation={0} style={styles.sectionBody}>
-                {this.props.bodyComponent}
-              </Paper>
+              {this.props.bodyComponent}
             </Grid>
           </Grid>
         </Grid>
