@@ -4,7 +4,6 @@ import Companies from './components/Companies';
 import CompanyCarousel from './components/CompanyCarousel';
 
 import logo from './logo.svg';
-
 import './css/App.css';
 
 const App = () => (
