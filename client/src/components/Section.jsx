@@ -56,7 +56,7 @@ export default class Section extends Component {
 
   render() {
     return (
-      <div className="section">
+      <div>
         <Grid
           container
           style={{

@@ -37,21 +37,19 @@ export default class Members extends Component {
     const { selected, members } = this.state;
     return (
       <div className="section">
-        {
-          <Section
-            leftComponent={<MemberCard selected={selected} />}
-            titleWhite="members"
-            titlePink="[]"
-            bodyComponent={(
-              <MemberChoice
-                members={members}
-                onSelect={chosen => this.setState({ selected: chosen })}
-              />
+        <Section
+          leftComponent={<MemberCard selected={selected} />}
+          titleWhite="members"
+          titlePink="[]"
+          bodyComponent={(
+            <MemberChoice
+              members={members}
+              onSelect={chosen => this.setState({ selected: chosen })}
+            />
 )}
-            widthRatio={3}
-            heightRatio={3}
-          />
-        }
+          widthRatio={3}
+          heightRatio={3}
+        />
       </div>
     );
   }

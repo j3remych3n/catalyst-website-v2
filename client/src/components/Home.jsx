@@ -22,37 +22,41 @@ export default class Home extends Component {
           <div>
             <LandingSplash />
 
-            <Section
-              titleWhite="what we "
-              titlePink="do()"
-              bodyComponent={(
-                <BodyWrapper style={{ minHeight: '100%', minWidth: '100%' }} basic>
-                  <span>
-                    At Catalyst, we organize and host both pre-professional and social events. Some
-                    pre-professional events we've hosted in the past include resume workshops,
-                    tutorial workshops, and guest speakers. Social events include casual dinners,
-                    parties, and SkyZone.
-                  </span>
-                </BodyWrapper>
+            <div className="section">
+              <Section
+                titleWhite="what we "
+                titlePink="do()"
+                bodyComponent={(
+                  <BodyWrapper style={{ minHeight: '100%', minWidth: '100%' }} basic>
+                    <span>
+                      At Catalyst, we organize and host both pre-professional and social events.
+                      Some pre-professional events we've hosted in the past include resume
+                      workshops, tutorial workshops, and guest speakers. Social events include
+                      casual dinners, parties, and SkyZone.
+                    </span>
+                  </BodyWrapper>
 )}
-              widthRatio={4}
-              heightRatio={3}
-            />
+                widthRatio={4}
+                heightRatio={3}
+              />
+            </div>
 
             <Members />
 
-            <Section
-              leftComponent={(
-                <div>
-                  <h1> JANE LI </h1>
-                </div>
+            <div className="section">
+              <Section
+                leftComponent={(
+                  <div>
+                    <h1> JANE LI </h1>
+                  </div>
 )}
-              titleWhite="members"
-              titlePink="[]"
-              bodyComponent={<h1> BOOM </h1>}
-              widthRatio={4}
-              heightRatio={3}
-            />
+                titleWhite="members"
+                titlePink="[]"
+                bodyComponent={<h1> BOOM </h1>}
+                widthRatio={4}
+                heightRatio={3}
+              />
+            </div>
           </div>
         )}
       />
