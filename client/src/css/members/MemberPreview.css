@@ -1,5 +1,8 @@
 .MemberPreview-member {
   margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .MemberPreview-member:focus {
@@ -31,4 +34,5 @@
   font-family: 'Nunito';
   font-size: 15pt;
   color: #000;
+  width: 131.25px;
 }
