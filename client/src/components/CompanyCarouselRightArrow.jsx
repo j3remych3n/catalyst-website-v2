@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import React from "react";
+import PropTypes from "prop-types";
+import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 
-import '../css/CompanyCarousel-arrow.css';
+import "../css/CompanyCarousel-arrow.css";
 
 function CompanyCarouselRightArrow(props) {
   const { onClick } = props;
@@ -14,7 +14,7 @@ function CompanyCarouselRightArrow(props) {
 }
 
 CompanyCarouselRightArrow.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default CompanyCarouselRightArrow;
