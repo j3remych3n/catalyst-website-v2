@@ -17,7 +17,7 @@ const App = () => (
     <Grid container alignItems="center" justify="center">
       <Companies />
     </Grid>
-    <Grid container alignItems="center" justify="center" style={{ backgroundColor: 0x3e3a6d }}>
+    <Grid container alignItems="center" justify="center">
       <WwdCarousel />
     </Grid>
   </div>
