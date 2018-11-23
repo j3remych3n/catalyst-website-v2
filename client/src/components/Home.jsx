@@ -35,7 +35,7 @@ export default class Home extends Component {
                     <h2> MEMBER 5 MEMBER 6 MEMBER 7 MEMBER 8 </h2>
                   </div>
                 }
-                widthRatio={4}
+                widthRatio={3}
                 heightRatio={3}
               />
 

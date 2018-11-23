@@ -61,7 +61,7 @@ export default class Section extends Component {
               backgroundColor: "gray",
               minHeight: "100%"
             }}
-            xs={3}
+            xs={this.props.widthRatio}
           >
             <Paper style={styles.left}>{this.props.leftComponent}</Paper>
           </Grid>
@@ -71,7 +71,7 @@ export default class Section extends Component {
             style={{
               backgroundColor: "black"
             }}
-            xs={9}
+            xs={12 - this.props.widthRatio}
           >
             <Grid
               item
