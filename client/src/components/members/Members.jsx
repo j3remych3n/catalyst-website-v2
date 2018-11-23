@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Grid from '@material-ui/core/Grid';
 import MemberCard from './MemberCard';
 import MemberChoice from './MemberChoice';
 
@@ -34,10 +35,17 @@ export default class Members extends Component {
   render() {
     const { selected, members } = this.state;
     return members.length > 0 ? (
-      <div className="Members-container">
-        <MemberCard selected={selected} />
-        <MemberChoice members={members} onSelect={chosen => this.setState({ selected: chosen })} />
-      </div>
+      <Grid container direction="row" justify="center" alignItems="center">
+        <Grid item xs={3}>
+          <MemberCard selected={selected} />
+        </Grid>
+        <Grid item xs={9}>
+          <MemberChoice
+            members={members}
+            onSelect={chosen => this.setState({ selected: chosen })}
+          />
+        </Grid>
+      </Grid>
     ) : (
       <div />
     );

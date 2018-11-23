@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 
 import '../../css/members/MemberPreview.css';
 
+const scaleFontSize = (l) => {
+  if (l < 15) return 15;
+  if (l < 20) return 13;
+  if (l < 30) return 10;
+  return 15;
+};
+
 const MemberPreview = (props) => {
   const {
     name, imageSrc, isSelected, onSelect,
@@ -17,7 +24,9 @@ const MemberPreview = (props) => {
       tabIndex={0}
     >
       <img src={imageSrc} alt={name} className={`MemberPreview-picture ${selectedStyling}`} />
-      <div className="MemberPreview-name">{name}</div>
+      <div className="MemberPreview-name" style={{ fontSize: `${scaleFontSize(name.length)}pt` }}>
+        {name}
+      </div>
     </div>
   );
 };
