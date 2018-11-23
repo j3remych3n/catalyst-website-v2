@@ -1,9 +1,9 @@
 .left-arrow {
   cursor: pointer;
-  float: left;
+  display: inline;
 }
 
 .right-arrow {
   cursor: pointer;
-  float: right;
+  display: inline;
 }

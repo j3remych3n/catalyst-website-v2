@@ -5,10 +5,17 @@
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  align-items: center;
-  justify: center;
 }
 
 .carouselContainer {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+}
+
+.carousel {
+  min-width: 50px;
+  min-height: 50px;
 }

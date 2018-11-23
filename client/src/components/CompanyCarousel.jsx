@@ -71,13 +71,14 @@ export default class CompanyCarousel extends Component {
   render() {
     const { companies } = this.state;
     return (
-      <Grid item xs={8}>
+      <div className="carouselContainer">
         <LeftArrow onClick={this.prev} />
         <Slider
           ref={(c) => {
             this.slider = c;
           }}
           {...carouselSettings}
+          className="carousel"
         >
           {companies.map(company => (
             <div key={uuidv1()}>
@@ -86,7 +87,7 @@ export default class CompanyCarousel extends Component {
           ))}
         </Slider>
         <RightArrow onClick={this.next} />
-      </Grid>
+      </div>
     );
   }
 }

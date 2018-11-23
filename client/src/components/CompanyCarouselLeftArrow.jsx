@@ -7,8 +7,8 @@ import '../css/CompanyCarousel-arrow.css';
 function CompanyCarouselLeftArrow(props) {
   const { onClick } = props;
   return (
-    <div>
-      <KeyboardArrowLeft onClick={onClick} className="left-arrow" />
+    <div className="left-arrow">
+      <KeyboardArrowLeft onClick={onClick} />
     </div>
   );
 }

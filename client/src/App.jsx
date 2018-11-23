@@ -16,7 +16,7 @@ const App = () => (
     <Grid container alignItems="center" justify="center">
       <Companies />
     </Grid>
-    <Grid container style={{ backgroundColor: 'pink' }}>
+    <Grid xs={8} item style={{ backgroundColor: 'pink' }}>
       <CompanyCarousel />
     </Grid>
   </div>
