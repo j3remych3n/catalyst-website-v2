@@ -5,6 +5,8 @@ import Typography from "@material-ui/core/Typography";
 import "../fonts.css";
 import chevron from "../assets/chevron.svg";
 import colors from "../colors.js";
+import Delay from "react-delay";
+import Fade from "react-reveal/Fade";
 
 const style = {
   canvas: {
@@ -39,19 +41,25 @@ const LandingSplash = () => (
       direction="column"
     >
       <Grid item>
-        <Typography style={style.catalyst} variant="h5" component="h3">
-          <img src={chevron} width="130" style={style.chevron} />
-          catalyst
-        </Typography>
+        <Delay wait={100}>
+          <Fade>
+            <Typography style={style.catalyst} variant="h5" component="h3">
+              <img src={chevron} width="130" style={style.chevron} />
+              catalyst
+            </Typography>
+          </Fade>
+        </Delay>
       </Grid>
       <Grid item>
-        <Typography component="p" style={style.subheader}>
-          duke's premier shitposting tech frat ben hubsch yolo swag.
-        </Typography>
+        <Delay wait={100}>
+          <Fade>
+            <Typography component="p" style={style.subheader}>
+              duke's premier shitposting tech frat ben hubsch yolo swag.
+            </Typography>
+          </Fade>
+        </Delay>
       </Grid>
       <svg
-        width={1.5 * w}
-        height={(2753 * (1.5 * w)) / 2917}
         viewBox="0 0 2917 2753"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
