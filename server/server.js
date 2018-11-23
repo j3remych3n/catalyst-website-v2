@@ -21,7 +21,7 @@ app.get('/api/members', (req, res) => {
             year: properties.Year,
             giturl: properties.Github,
             linkedinurl: properties.LinkedIn,
-            bio: properties.bio,
+            bio: properties.Bio,
             personalurl: properties['Personal Website'],
           })),
       });
