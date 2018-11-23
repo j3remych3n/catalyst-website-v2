@@ -26,15 +26,17 @@ const carouselSettings = {
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 650,
       settings: {
-        slidesToShow: 1,
+        arrows: false,
+        autoplay: true,
       },
     },
     {
-      breakpoint: 480,
+      breakpoint: 550,
       settings: {
-        slidesToShow: 1,
+        arrows: false,
+        autoplay: true,
       },
     },
   ],
