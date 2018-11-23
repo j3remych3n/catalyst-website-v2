@@ -10,32 +10,22 @@ import "./css/App.css";
 import "./fonts.css";
 import WwdCarousel from "./components/WwdCarousel";
 
-// const App = () => (
-//   <div className="App">
-//     <header className="App-header">
-//       <img src={logo} className="App-logo" alt="logo" />
-//       <h1 className="App-title">ok</h1>
-//     </header>
-//     <Grid container alignItems="center" justify="center">
-//       <Companies />
-//     </Grid>
-//     <Grid container alignItems="center" justify="center">
-//       <WwdCarousel />
-//     </Grid>
-//   </div>
-// );
-// const App = () => (
-//   <div className="App">
-//     <header className="App-header">
-//       <img src={logo} className="App-logo" alt="logo" />
-//       <h1 className="App-title">Hello World</h1>
-//     </header>
-//     <Grid container alignItems="center" justify="center">
-//       <Companies />
-//     </Grid>
-//   </div>
-// );
-
-const App = () => <Home />;
+const App = () => (
+  <div className="App">
+    <header className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <h1 className="App-title">
+        {" "}
+        Tooday is the best day to take too many Ls.{" "}
+      </h1>
+    </header>
+    <Grid container alignItems="center" justify="center">
+      <Companies />
+    </Grid>
+    <Grid xs={8} item style={{ backgroundColor: "pink" }}>
+      <CompanyCarousel />
+    </Grid>
+  </div>
+);
 
 export default App;

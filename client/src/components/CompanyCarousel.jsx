@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Grid from '@material-ui/core/Grid';
 import Slider from 'react-slick';
 import axios from 'axios';
 import uuidv1 from 'uuid/v1';
@@ -22,13 +23,13 @@ const carouselSettings = {
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 3,
       },
     },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
       },
     },
     {
@@ -80,7 +81,7 @@ export default class CompanyCarousel extends Component {
           className="carousel"
         >
           {companies.map(company => (
-            <div key={uuidv1()} className="logo-container">
+            <div key={uuidv1()}>
               <img src={company} alt="" className="logo" />
             </div>
           ))}

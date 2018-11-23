@@ -1,11 +1,9 @@
 .left-arrow {
   cursor: pointer;
   display: inline;
-  transform: scale(2);
 }
 
 .right-arrow {
   cursor: pointer;
   display: inline;
-  transform: scale(2);
 }
