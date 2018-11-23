@@ -48,6 +48,15 @@ app.get("/api/faq", (req, res) => {
     });
 });
 
+app.get("/api/wwd", (req, res) => {
+  const TABLE_NAME = "General Info";
+  websiteV2(TABLE_NAME)
+    .select()
+    .all((err, data) => {
+      res.send({ whatWeDo: data.map(wwd => wwd.fields) });
+    });
+});
+
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
   app.use(express.static(path.join(__dirname, "client/build")));
