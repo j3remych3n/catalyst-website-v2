@@ -60,8 +60,6 @@ const LandingSplash = () => (
         </Delay>
       </Grid>
       <svg
-        width={1.5 * w}
-        height={(2753 * (1.5 * w)) / 2917}
         viewBox="0 0 2917 2753"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -4,15 +4,9 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import Section from "./Section.jsx";
 import LandingSplash from "./LandingSplash.jsx";
 import BodyWrapper from "./BodyWrapper.jsx";
+import "../overrides.css";
 
-const sectionList = [
-  "home",
-  "what we do",
-  "members",
-  "where we've worked",
-  "faq",
-  "contact"
-];
+const sectionList = ["home", "what we do", "members", "where we've worked"];
 
 export default class Home extends Component {
   constructor(props) {
@@ -23,13 +17,15 @@ export default class Home extends Component {
     return (
       <ReactFullpage
         navigation
-        sectionsColor={["rgba(0,0,0,0)", "rgba(0,0,0,0)", "#24306c", "#24306c"]}
+        sectionsColor={["rgba(0,0,0,0)", "#24306c", "#24306c", "#24306c"]}
+        navigationTooltips={sectionList}
         render={({ state, fullpageApi }) => {
           return (
             <div>
-              <LandingSplash />
+              <LandingSplash id="home" />
 
               <Section
+                id="what we do"
                 titleWhite={"what we "}
                 titlePink={"do()"}
                 bodyComponent={
@@ -51,6 +47,7 @@ export default class Home extends Component {
               />
 
               <Section
+                id="members"
                 leftComponent={
                   <div>
                     <h1> JANE LI </h1>
