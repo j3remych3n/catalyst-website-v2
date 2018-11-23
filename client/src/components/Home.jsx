@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Section from "./Section.jsx";
+import LandingSplash from "./LandingSplash.jsx";
 
 export default class Home extends Component {
   constructor(props) {
@@ -76,6 +77,19 @@ export default class Home extends Component {
                 widthRatio={4}
                 heightRatio={3}
               />
+        sectionsColor={[
+          "rgba(0,0,0,0)",
+          "rgba(0,0,0,0)",
+          "rgba(0,0,0,0)",
+          "#24306c"
+        ]}
+        render={({ state, fullpageApi }) => {
+          return (
+            <div>
+              <LandingSplash />
+              <Section />
+              <Section />
+              <Section />
             </div>
           );
         }}
