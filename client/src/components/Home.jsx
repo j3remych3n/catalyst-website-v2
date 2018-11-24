@@ -8,10 +8,13 @@ import Faq from './Faq';
 import Blurbs from './blurbs';
 import Members from './members/Members';
 
+const sectionList = ['home', 'what we do', 'members', "where we've worked", 'faqs'];
+
 const Home = () => (
   <ReactFullpage
     navigation
     sectionsColor={['rgba(0,0,0,0)', '#24306c', '#24306c', '#24306c', '#24306c']}
+    navigationTooltips={sectionList}
     render={() => (
       <div>
         <LandingSplash />
