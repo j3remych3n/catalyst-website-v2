@@ -4,8 +4,7 @@ import MemberCard from './MemberCard';
 import MemberChoice from './MemberChoice';
 import Section from '../Section';
 
-import '../../css/members/Members.css';
-import catalystLogo from '../../assets/chevron.svg';
+import catalystLogo from '../../assets/svgs/cata_chevron.svg';
 
 const DEFAULT_CARD = {
   name: 'Duke Catalyst',

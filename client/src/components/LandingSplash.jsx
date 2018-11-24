@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import '../fonts.css';
 import Delay from 'react-delay';
 import Fade from 'react-reveal/Fade';
-import chevron from '../assets/chevron.svg';
+import chevron from '../assets/svgs/cata_chevron.svg';
 import colors from '../colors';
 
 const style = {
