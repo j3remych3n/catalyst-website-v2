@@ -48,7 +48,7 @@ const styles = {
 };
 
 const Section = ({
-  widthRatio, leftComponent, titleWhite, titlePink, bodyComponent,
+  widthRatio, leftComponent, titleWhite, titlePink, bodyComponent, vector,
 }) => (
   <div>
     <Grid
@@ -56,6 +56,7 @@ const Section = ({
       style={{
         minHeight: '75%',
         paddingRight: '5%',
+        zIndex: 2,
       }}
       xs={12}
     >
@@ -124,11 +125,32 @@ const Section = ({
         </Grid>
       </Grid>
     </Grid>
+    <div
+      style={{
+        position: 'absolute',
+        minWidth: '110%',
+        top: '-10%',
+        left: 0,
+        zIndex: 1,
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          textAlign: 'center',
+          alignItems: 'center',
+        }}
+      >
+        {vector}
+      </div>
+    </div>
   </div>
 );
 
 Section.defaultProps = {
   leftComponent: <div />,
+  vector: false,
 };
 
 Section.propTypes = {
@@ -137,6 +159,7 @@ Section.propTypes = {
   titlePink: PropTypes.string.isRequired,
   bodyComponent: PropTypes.element.isRequired,
   widthRatio: PropTypes.number.isRequired,
+  vector: PropTypes.element,
 };
 
 export default Section;

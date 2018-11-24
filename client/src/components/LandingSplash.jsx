@@ -56,22 +56,6 @@ const LandingSplash = () => (
           </Fade>
         </Delay>
       </Grid>
-      <svg
-        viewBox="0 0 2917 2753"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{
-          position: 'absolute',
-          zIndex: -1,
-          paddingTop: '150%',
-          marginLeft: '25%',
-        }}
-      >
-        <path
-          d="M3765.97 1754.37C3908.47 1068.3 3980.09 582.793 3896 588C3612 605.585 2130.5 752 1784.5 334.5C1575.01 81.7189 1258.84 -216.121 573.499 231.5C269.754 429.887 135.122 1000.92 97.602 1714.63L3765.97 1754.37Z"
-          fill="#222E70"
-        />
-      </svg>
     </Grid>
   </Paper>
 );
