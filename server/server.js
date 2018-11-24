@@ -48,12 +48,14 @@ app.get("/api/faq", (req, res) => {
     });
 });
 
-app.get("/api/wwd", (req, res) => {
+app.get("/api/wwd/:key", (req, res) => {
+  const { key } = req.params;
   const TABLE_NAME = "General Info";
   websiteV2(TABLE_NAME)
-    .select()
+    .select({ filterByFormula: `FIND(\"${key}\",Key)` })
     .all((err, data) => {
-      res.send({ whatWeDo: data.map(wwd => wwd.fields) });
+      console.log(data);
+      res.send({ val: data[0].fields.Value });
     });
 });
 

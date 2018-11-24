@@ -6,6 +6,7 @@ import LandingSplash from "./LandingSplash.jsx";
 import BodyWrapper from "./BodyWrapper.jsx";
 import "../overrides.css";
 import Faq from "./Faq.jsx";
+import Blurbs from "./blurbs";
 
 const sectionList = ["home", "what we do", "members", "where we've worked"];
 
@@ -40,13 +41,7 @@ export default class Home extends Component {
                     style={{ minHeight: "100%", minWidth: "100%" }}
                     basic={true}
                   >
-                    <span>
-                      At Catalyst, we organize and host both pre-professional
-                      and social events. Some pre-professional events we've
-                      hosted in the past include resume workshops, tutorial
-                      workshops, and guest speakers. Social events include
-                      casual dinners, parties, and SkyZone.
-                    </span>
+                    <Blurbs section="what we do" />
                   </BodyWrapper>
                 }
                 widthRatio={4}
