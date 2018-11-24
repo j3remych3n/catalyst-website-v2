@@ -8,7 +8,7 @@ import Faq from './Faq';
 import Blurbs from './blurbs';
 import Members from './members/Members';
 
-const sectionList = ['home', 'what we do', 'members', "where we've worked", 'faqs'];
+const sectionList = ['home', 'mission', 'what we do', 'members', "where we've worked", 'faqs'];
 
 const Home = () => (
   <ReactFullpage
