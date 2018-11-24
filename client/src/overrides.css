@@ -1,0 +1,25 @@
+/*Overrides must match specificity of pre-loaded styles!*/
+/*The simplest way to get the selector is with devtools*/
+#fp-nav ul li:hover a.active span,
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span {
+  background-color: #ef827f;
+}
+
+.fp-tooltip,
+.fp-sr-only {
+  background-color: rgba(255, 123, 123, 0.7);
+  padding: 5px;
+  margin-top: -7px;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background-color: #c4c4c4;
+}
+
+#fp-nav ul li .fp-tooltip {
+  font-family: "GlacialIndifference";
+  font-size: 12pt;
+}

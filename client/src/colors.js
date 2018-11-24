@@ -1,11 +1,11 @@
-const pink = "#ef827f";
-const lightblue = "#479fcc";
-const blue = "#24306c";
-const yellow = "#fbe79e";
-const purple = "#3e3a6d";
-const gray = "#555555";
-const lgray = "#515151";
-const white = "#ffffff";
+const pink = '#ef827f';
+const lightblue = '#479fcc';
+const blue = '#24306c';
+const yellow = '#fbe79e';
+const purple = '#3e3a6d';
+const gray = '#555555';
+const lgray = '#515151';
+const white = '#ffffff';
 
 export default class colors {
   static get blue() {

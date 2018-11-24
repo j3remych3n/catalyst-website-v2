@@ -62,3 +62,7 @@ typings/
 
 # Mac DS_Store files (https://stackoverflow.com/questions/18393498/gitignore-all-the-ds-store-files-in-every-folder-and-subfolder/34752442)
 .DS_Store
+
+.vscode
+
+.eslintrc.js

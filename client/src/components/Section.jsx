@@ -1,117 +1,142 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
+import PropTypes from 'prop-types';
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Delay from 'react-delay';
+import Fade from 'react-reveal/Fade';
+import colors from '../colors';
 
 const styles = {
   left: {
-    backgroundColor: "#3e3a6d",
-    minHeight: "100%",
-    minWidth: "100%",
-    color: "white",
-    display: "inline-block"
+    backgroundColor: 'rgba(0, 0, 0, 0.0)',
+    minHeight: '100%',
+    minWidth: '100%',
+    color: 'white',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
-  rightTop: {
-    backgroundColor: "#479fcc",
-    minHeight: "100%",
-    minWidth: "100%",
-    color: "white",
-    display: "inline-block"
+  header: {
+    backgroundColor: 'rgba(255, 255, 255, 0.0)',
+    minHeight: '100%',
+    minWidth: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    paddingLeft: '2.5%',
   },
 
-  rightBottom: {
-    backgroundColor: "#ef827f",
-    minHeight: "100%",
-    minWidth: "100%",
-    color: "white",
-    display: "inline-block"
+  sectionBody: {
+    backgroundColor: 'rgba(100, 255, 255, 0.0)',
+    minHeight: '100%',
+    minWidth: '100%',
+    color: 'white',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
-  pinkPart: {
-    color: "orange"
+  sectionTitle: {
+    fontSize: '80pt',
+    fontFamily: 'GlacialIndifference',
+    color: 'white',
   },
 
-  title: {
-    fontSize: 39
-  }
+  titleAnnotation: {
+    color: colors.pink,
+  },
 };
 
-export default class Section extends Component {
-  constructor(props) {
-    super(props);
-    console.log(this.props.leftComponent);
-  }
-
-  render() {
-    return (
-      <div className="section">
+const Section = ({
+  widthRatio, leftComponent, titleWhite, titlePink, bodyComponent,
+}) => (
+  <div>
+    <Grid
+      container
+      style={{
+        minHeight: '75%',
+        paddingRight: '5%',
+      }}
+      xs={12}
+    >
+      <Grid
+        item
+        style={{
+          minHeight: '100%',
+        }}
+        xs={widthRatio}
+      >
         <Grid
-          container
+          item
           style={{
-            backgroundColor: "pink",
-            minHeight: "50%"
+            height: '20%',
+            display: 'inline-block',
+            width: '100%',
           }}
-          xs={12}
         >
-          <Grid
-            item
-            style={{
-              backgroundColor: "gray",
-              minHeight: "100%"
-            }}
-            xs={this.props.widthRatio}
-          >
-            <Paper style={styles.left}>{this.props.leftComponent}</Paper>
-          </Grid>
+          <Paper elevation={0} style={styles.header} />
+        </Grid>
 
-          <Grid
-            item
-            style={{
-              backgroundColor: "black"
-            }}
-            xs={12 - this.props.widthRatio}
-          >
-            <Grid
-              item
-              style={{
-                height: "20%",
-                display: "inline-block",
-                width: "100%"
-              }}
-            >
-              <Paper style={styles.rightTop}>
-                <span style={styles.title}>
-                  {this.props.titleWhite}
-                  <span style={styles.pinkPart}> {this.props.titlePink} </span>
+        <Grid
+          item
+          style={{
+            height: '80%',
+          }}
+        >
+          <Paper elevation={0} style={styles.left}>
+            <Delay wait={1000}>
+              <Fade>{leftComponent}</Fade>
+            </Delay>
+          </Paper>
+        </Grid>
+      </Grid>
+
+      <Grid item style={{}} xs={12 - widthRatio}>
+        <Grid
+          item
+          style={{
+            height: '20%',
+            display: 'inline-block',
+            width: '100%',
+          }}
+        >
+          <Delay wait={600}>
+            <Fade>
+              <Paper elevation={0} style={styles.header}>
+                <span style={styles.sectionTitle}>
+                  {titleWhite}
+                  <span style={styles.titleAnnotation}>{titlePink}</span>
                 </span>
               </Paper>
-            </Grid>
-
-            <Grid
-              item
-              style={{
-                height: "80%"
-              }}
-            >
-              <Paper style={styles.rightBottom}>
-                {this.props.bodyComponent}
-              </Paper>
-            </Grid>
-          </Grid>
+            </Fade>
+          </Delay>
         </Grid>
-      </div>
-    );
-  }
-}
+
+        <Grid
+          item
+          style={{
+            height: '80%',
+          }}
+        >
+          <Delay wait={1000}>
+            <Fade>{bodyComponent}</Fade>
+          </Delay>
+        </Grid>
+      </Grid>
+    </Grid>
+  </div>
+);
+
+Section.defaultProps = {
+  leftComponent: <div />,
+};
+
 Section.propTypes = {
   leftComponent: PropTypes.element,
   titleWhite: PropTypes.string.isRequired,
   titlePink: PropTypes.string.isRequired,
-  bodyComponent: PropTypes.element,
-  widthRatio: PropTypes.number,
-  heightRatio: PropTypes.number
+  bodyComponent: PropTypes.element.isRequired,
+  widthRatio: PropTypes.number.isRequired,
 };
 
-// width: 200, height: 200,
+export default Section;
