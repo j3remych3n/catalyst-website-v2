@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import styled from 'styled-components';
 
+import colors from '../colors';
+
 const LeftArrow = styled.div`
   cursor: pointer;
-  color: white;
+  color: ${colors.white};
   display: inline;
   transform: scale(3);
 `;
