@@ -1,0 +1,38 @@
+.MemberPreview-member {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.MemberPreview-member:focus {
+  outline: none;
+}
+
+.MemberPreview-picture {
+  width: 131.25px;
+  height: 131.25px;
+  border-radius: 50%;
+  transition: opacity 0.25s;
+}
+
+.MemberPreview-unselected {
+  border: 1px solid #fff;
+  margin: 5px;
+}
+
+.MemberPreview-selected {
+  border: 3px solid #ff7b7b;
+  margin: 3px;
+}
+
+.MemberPreview-picture:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.MemberPreview-name {
+  font-family: 'Nunito';
+  color: #fff;
+  width: 131.25px;
+}

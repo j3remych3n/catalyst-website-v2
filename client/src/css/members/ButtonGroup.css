@@ -1,0 +1,28 @@
+.ButtonGroup-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.ButtonGroup-choice {
+  font-family: 'GlacialIndifference';
+  font-size: 20pt;
+  padding: 0px 8px 0px 8px;
+  margin: 4px;
+  outline: none;
+}
+
+.ButtonGroup-choice:hover {
+  border-bottom: 3px solid #ff7b7b;
+  cursor: pointer;
+}
+
+.ButtonGroup-selected {
+  border-bottom: 3px solid #ff7b7b;
+  font-weight: bold;
+  color: #fff;
+}
+
+.ButtonGroup-unselected {
+  border-bottom: none;
+  color: rgb(255, 255, 255, 0.65);
+}
