@@ -4,23 +4,6 @@ import uuidv1 from 'uuid/v1';
 import styled from 'styled-components';
 import colors from '../colors';
 
-const styles = {
-  txtStyle: {
-    color: colors.white,
-    display: 'inline',
-  },
-  wrapStyle: {
-    minHeight: '100%',
-    minWidth: '100%',
-    addingLeft: '2.5%',
-    marginRight: '5%',
-    margin: '0',
-    fontSize: '19pt',
-    paddingTop: '5%',
-    fontFamily: 'GlacialIndifference',
-  },
-};
-
 const QTag = styled.div`
   color: ${colors.pink};
   display: inline;
@@ -29,6 +12,22 @@ const QTag = styled.div`
 const ATag = styled.div`
   color: ${colors.yellow};
   display: inline;
+`;
+
+const QorA = styled.div`
+  color: ${colors.white};
+  display: inline;
+`;
+
+const FaqSection = styled.div`
+  min-height: 100%;
+  min-width: 100%;
+  adding-left: 2.5%;
+  margin-right: 5%;
+  margin: 0;
+  font-size: 19pt;
+  padding-top: 5%;
+  font-family: GlacialIndifference;
 `;
 
 export default class Faq extends Component {
@@ -47,29 +46,25 @@ export default class Faq extends Component {
 
   render() {
     const { faq } = this.state;
-    const qTagOpen = '<q>';
-    const qTagClose = '</q>';
-    const aTagOpen = '<a>';
-    const aTagClose = '</a>';
 
     return (
-      <div style={styles.wrapStyle} align="left">
+      <FaqSection>
         {faq.map(pair => (
           <div key={uuidv1()}>
             <div>
-              <QTag>{qTagOpen}</QTag>
-              <div style={styles.txtStyle}>{pair.Key}</div>
-              <QTag>{qTagClose}</QTag>
+              <QTag>{'<q>'}</QTag>
+              <QorA>{pair.Key}</QorA>
+              <QTag>{'</q>'}</QTag>
             </div>
             <div>
-              <ATag>{aTagOpen}</ATag>
-              <div style={styles.txtStyle}>{pair.Value}</div>
-              <ATag>{aTagClose}</ATag>
+              <ATag>{'<a>'}</ATag>
+              <QorA>{pair.Value}</QorA>
+              <ATag>{'</a>'}</ATag>
             </div>
             <br />
           </div>
         ))}
-      </div>
+      </FaqSection>
     );
   }
 }
