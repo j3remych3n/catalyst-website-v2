@@ -12,10 +12,12 @@
 }
 
 .carouselContainer {
+  padding-top: 5%;
+  padding-left: 3%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  max-width: 50%;
+  max-width: 80%;
 }
 
 .carousel {
