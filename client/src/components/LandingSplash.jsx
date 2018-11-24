@@ -5,31 +5,33 @@ import Typography from '@material-ui/core/Typography';
 import '../fonts.css';
 import Delay from 'react-delay';
 import Fade from 'react-reveal/Fade';
+import styled from 'styled-components';
 import chevron from '../assets/svgs/cata_chevron.svg';
 import colors from '../colors';
 
-const style = {
-  canvas: {
-    backgroundColor: 'rgba(0,0,0,0)',
-    paddingRight: '10%',
-  },
-  catalyst: {
-    fontFamily: 'HKGrotesk',
-    color: colors.gray,
-    fontSize: 160,
-  },
-  chevron: {
-    marginBottom: -25,
-  },
-  subheader: {
-    fontFamily: 'GlacialIndifference',
-    color: '#515151',
-    fontSize: 30,
-  },
-};
+const Canvas = styled(Paper)`
+  background-color: rgba(0, 0, 0, 0) !important;
+  padding-right: 10% !important;
+`;
+
+const Catalyst = styled(Typography)`
+  font-family: HKGrotesk !important
+  color: ${colors.gray} !important
+  font-size: 160pt !important
+`;
+
+const CatalystChevron = styled.img`
+  margin-bottom: -25px;
+`;
+
+const Subheader = styled(Typography)`
+  font-family: GlacialIndifference !important
+  color: #515151 !important
+  font-size: 30pt !important
+`;
 
 const LandingSplash = () => (
-  <Paper className="section" elevation={0} style={style.canvas}>
+  <Canvas className="section" elevation={0}>
     <Grid
       container
       style={{ minHeight: '100%', zIndex: 1, backgroundColor: 'rba(0,0,0,0)' }}
@@ -40,19 +42,19 @@ const LandingSplash = () => (
       <Grid item>
         <Delay wait={100}>
           <Fade>
-            <Typography style={style.catalyst} variant="h5" component="h3">
-              <img src={chevron} width="130" style={style.chevron} alt="Catalyst logo" />
+            <Catalyst variant="h5" component="h3">
+              <CatalystChevron src={chevron} width="130" alt="Catalyst logo" />
               catalyst
-            </Typography>
+            </Catalyst>
           </Fade>
         </Delay>
       </Grid>
       <Grid item>
         <Delay wait={100}>
           <Fade>
-            <Typography component="p" style={style.subheader}>
+            <Subheader component="p">
               dukes premier shitposting tech frat ben hubsch yolo swag.
-            </Typography>
+            </Subheader>
           </Fade>
         </Delay>
       </Grid>
@@ -73,6 +75,6 @@ const LandingSplash = () => (
         />
       </svg>
     </Grid>
-  </Paper>
+  </Canvas>
 );
 export default LandingSplash;

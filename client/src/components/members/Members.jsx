@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
 import MemberCard from './MemberCard';
 import MemberChoice from './MemberChoice';
 import Section from '../Section';
