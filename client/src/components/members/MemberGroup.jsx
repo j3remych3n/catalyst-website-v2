@@ -1,8 +1,38 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MemberPreview from './MemberPreview';
+import styled from 'styled-components';
 
-import '../../css/members/MemberGroup.css';
+import MemberPreview from './MemberPreview';
+import colors from '../../colors';
+
+const MemberGroupContainer = styled.div`
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  text-align: center;
+
+  ::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: ${colors.pink};
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e84768;
+  }
+`;
+
+const MemberGroupRow = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 export default class MemberGroup extends Component {
   constructor(props) {
@@ -20,8 +50,8 @@ export default class MemberGroup extends Component {
     const firstHalf = members.slice(0, half);
     const secondHalf = members.slice(half);
     return (
-      <div className="MemberGroup-container">
-        <div className="MemberGroup-row">
+      <MemberGroupContainer id="scrollable">
+        <MemberGroupRow>
           {firstHalf.map(member => (
             <MemberPreview
               key={member.name}
@@ -33,8 +63,8 @@ export default class MemberGroup extends Component {
               {...member}
             />
           ))}
-        </div>
-        <div className="MemberGroup-row">
+        </MemberGroupRow>
+        <MemberGroupRow>
           {secondHalf.map(member => (
             <MemberPreview
               key={member.name}
@@ -46,8 +76,8 @@ export default class MemberGroup extends Component {
               {...member}
             />
           ))}
-        </div>
-      </div>
+        </MemberGroupRow>
+      </MemberGroupContainer>
     );
   }
 }

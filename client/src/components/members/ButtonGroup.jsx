@@ -40,7 +40,7 @@ export default class ButtonGroup extends Component {
     this.setState({ selected: choice });
 
     // resets the scrollbar
-    document.getElementsByClassName('MemberGroup-container')[0].scrollLeft = 0;
+    document.getElementById('scrollable').scrollLeft = 0;
   }
 
   render() {
