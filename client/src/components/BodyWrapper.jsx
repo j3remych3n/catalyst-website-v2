@@ -1,27 +1,24 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const styles = {
-  fillPaper: {
-    minHeight: '100%',
-    minWidth: '100%',
-    backgroundColor: 'rgba(0,0,0,0)',
-    paddingLeft: '2.5%',
-    marginRight: '5%',
-    margin: '0',
-    paddingTop: '5%',
-    fontFamily: 'GlacialIndifference',
-    fontSize: '25pt',
-    color: 'white',
-  },
-};
+import colors from '../colors';
 
-const BodyWrapper = ({ children }) => (
-  <Paper elevation={0} style={styles.fillPaper}>
-    {children}
-  </Paper>
-);
+const StyledPaper = styled(Paper)`
+  min-height: 100%;
+  min-width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  padding-left: 2.5%;
+  margin-right: 5%;
+  margin: 0;
+  padding-top: 5%;
+  font-family: GlacialIndifference;
+  font-size: 25pt;
+  color: ${colors.white};
+`;
+
+const BodyWrapper = ({ children }) => <StyledPaper elevation={0}>{children}</StyledPaper>;
 
 BodyWrapper.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
