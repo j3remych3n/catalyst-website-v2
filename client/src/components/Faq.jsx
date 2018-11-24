@@ -22,6 +22,7 @@ const styles = {
     addingLeft: "2.5%",
     marginRight: "5%",
     margin: "0",
+    fontSize: "19pt",
     paddingTop: "5%",
     fontFamily: "GlacialIndifference"
   }

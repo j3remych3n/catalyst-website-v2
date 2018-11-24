@@ -8,7 +8,13 @@ import "../overrides.css";
 import Faq from "./Faq.jsx";
 import Blurbs from "./blurbs";
 
-const sectionList = ["home", "what we do", "members", "where we've worked"];
+const sectionList = [
+  "home",
+  "what we do",
+  "members",
+  "where we've worked",
+  "faqs"
+];
 
 export default class Home extends Component {
   constructor(props) {

@@ -113,8 +113,7 @@ export default class Section extends Component {
                     <span style={styles.sectionTitle}>
                       {this.props.titleWhite}
                       <span style={styles.titleAnnotation}>
-                        {" "}
-                        {this.props.titlePink}{" "}
+                        {this.props.titlePink}
                       </span>
                     </span>
                   </Paper>
