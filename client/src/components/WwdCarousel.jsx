@@ -14,7 +14,7 @@ const carouselSettings = {
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
+  autoplay: false,
   dots: false,
   speed: 1000,
   arrows: true,

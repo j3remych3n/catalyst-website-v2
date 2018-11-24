@@ -7,8 +7,8 @@ import '../overrides.css';
 import Faq from './Faq';
 import Blurbs from './blurbs';
 import Members from './members/Members';
-import WwdCarousel from './WwdCarousel';
 import CompanyCarousel from './CompanyCarousel';
+import SingleImageCarousel from './SingleImageCarousel';
 
 const sectionList = ['home', 'mission', 'what we do', 'members', "where we've worked", 'faqs'];
 
@@ -40,7 +40,7 @@ const Home = () => (
             titlePink="do()"
             leftComponent={(
               <div>
-                <WwdCarousel />
+                <SingleImageCarousel />
               </div>
 )}
             bodyComponent={(

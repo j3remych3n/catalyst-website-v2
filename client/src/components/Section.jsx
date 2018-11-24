@@ -56,6 +56,7 @@ const Section = ({
       style={{
         minHeight: '75%',
         paddingRight: '5%',
+        display: 'flex',
       }}
       xs={12}
     >
