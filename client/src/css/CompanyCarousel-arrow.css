@@ -1,10 +1,12 @@
 .left-arrow {
   cursor: pointer;
+  color: white;
   display: inline;
-  transform: scale(2);
+  transform: scale(3);
 }
 .right-arrow {
   cursor: pointer;
+  color: white;
   display: inline;
-  transform: scale(2);
+  transform: scale(3);
 }
