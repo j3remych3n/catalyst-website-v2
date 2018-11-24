@@ -46,8 +46,7 @@ export default class Members extends Component {
               onSelect={chosen => this.setState({ selected: chosen })}
             />
 )}
-          widthRatio={3}
-          heightRatio={3}
+          widthRatio={4}
         />
       </div>
     );
