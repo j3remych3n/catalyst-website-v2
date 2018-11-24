@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import uuidv1 from 'uuid/v1';
-import colors from '../colors.js';
 
 export default class Test extends Component {
   constructor(props) {

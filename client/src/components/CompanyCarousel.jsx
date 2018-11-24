@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
-import axios from "axios";
-import uuidv1 from "uuid/v1";
-import LeftArrow from "./CompanyCarouselLeftArrow";
-import RightArrow from "./CompanyCarouselRightArrow";
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+import axios from 'axios';
+import uuidv1 from 'uuid/v1';
+import LeftArrow from './CompanyCarouselLeftArrow';
+import RightArrow from './CompanyCarouselRightArrow';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../css/CompanyCarousel.css";
-import "../css/CompanyCarousel-arrow.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import '../css/CompanyCarousel.css';
+import '../css/CompanyCarousel-arrow.css';
 
 const carouselSettings = {
   accessibility: true,
@@ -50,7 +50,7 @@ export default class CompanyCarousel extends Component {
     this.prev = this.prev.bind(this);
 
     this.state = {
-      companies: []
+      companies: [],
     };
 
     axios
@@ -73,7 +73,7 @@ export default class CompanyCarousel extends Component {
       <div className="carouselContainer">
         <LeftArrow onClick={this.prev} />
         <Slider
-          ref={c => {
+          ref={(c) => {
             this.slider = c;
           }}
           {...carouselSettings}

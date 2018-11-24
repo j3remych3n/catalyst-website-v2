@@ -13,11 +13,24 @@ const sectionList = ['home', 'what we do', 'members', "where we've worked", 'faq
 const Home = () => (
   <ReactFullpage
     navigation
-    sectionsColor={['rgba(0,0,0,0)', '#24306c', '#24306c', '#24306c', '#24306c']}
+    sectionsColor={['rgba(0,0,0,0)', '#24306c', '#24306c', '#24306c', '#24306c', '#24306c']}
     navigationTooltips={sectionList}
     render={() => (
       <div>
         <LandingSplash />
+
+        <div className="section">
+          <Section
+            titleWhite="mission statement"
+            titlePink=";"
+            bodyComponent={(
+              <BodyWrapper style={{ minHeight: '100%', minWidth: '100%' }} basic>
+                <Blurbs section="who we are" />
+              </BodyWrapper>
+)}
+            widthRatio={4}
+          />
+        </div>
 
         <div className="section">
           <Section
@@ -29,7 +42,6 @@ const Home = () => (
               </BodyWrapper>
 )}
             widthRatio={4}
-            heightRatio={3}
           />
         </div>
 
@@ -46,17 +58,10 @@ const Home = () => (
             titlePink="[]"
             bodyComponent={<h1> BOOM </h1>}
             widthRatio={4}
-            heightRatio={3}
           />
         </div>
         <div className="section">
-          <Section
-            titleWhite="faq"
-            titlePink="?"
-            bodyComponent={<Faq />}
-            widthRatio={4}
-            heightRatio={3}
-          />
+          <Section titleWhite="faq" titlePink="?" bodyComponent={<Faq />} widthRatio={4} />
         </div>
       </div>
     )}
