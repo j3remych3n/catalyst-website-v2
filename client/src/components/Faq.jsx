@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import uuidv1 from 'uuid/v1';
+import styled from 'styled-components';
 import colors from '../colors';
 
 const styles = {
-  qTag: {
-    color: colors.pink,
-    display: 'inline',
-  },
-  aTag: {
-    color: colors.yellow,
-    display: 'inline',
-  },
   txtStyle: {
     color: colors.white,
     display: 'inline',
@@ -27,6 +20,16 @@ const styles = {
     fontFamily: 'GlacialIndifference',
   },
 };
+
+const QTag = styled.div`
+  color: ${colors.pink};
+  display: inline;
+`;
+
+const ATag = styled.div`
+  color: ${colors.yellow};
+  display: inline;
+`;
 
 export default class Faq extends Component {
   constructor(props) {
@@ -54,14 +57,14 @@ export default class Faq extends Component {
         {faq.map(pair => (
           <div key={uuidv1()}>
             <div>
-              <div style={styles.qTag}>{qTagOpen}</div>
+              <QTag>{qTagOpen}</QTag>
               <div style={styles.txtStyle}>{pair.Key}</div>
-              <div style={styles.qTag}>{qTagClose}</div>
+              <QTag>{qTagClose}</QTag>
             </div>
             <div>
-              <div style={styles.aTag}>{aTagOpen}</div>
+              <ATag>{aTagOpen}</ATag>
               <div style={styles.txtStyle}>{pair.Value}</div>
-              <div style={styles.aTag}>{aTagClose}</div>
+              <ATag>{aTagClose}</ATag>
             </div>
             <br />
           </div>
