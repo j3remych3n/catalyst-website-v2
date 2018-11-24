@@ -19,7 +19,7 @@ const QorA = styled.div`
   display: inline;
 `;
 
-const FaqSection = styled.div`
+const FaqContainer = styled.div`
   min-height: 100%;
   min-width: 100%;
   adding-left: 2.5%;
@@ -48,7 +48,7 @@ export default class Faq extends Component {
     const { faq } = this.state;
 
     return (
-      <FaqSection>
+      <FaqContainer>
         {faq.map(pair => (
           <div key={uuidv1()}>
             <div>
@@ -64,7 +64,7 @@ export default class Faq extends Component {
             <br />
           </div>
         ))}
-      </FaqSection>
+      </FaqContainer>
     );
   }
 }
