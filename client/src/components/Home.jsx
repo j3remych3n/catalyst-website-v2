@@ -1,65 +1,63 @@
-import React, { Component } from 'react';
-import Grid from '@material-ui/core/Grid';
+import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
-import Section from './Section.jsx';
-import LandingSplash from './LandingSplash.jsx';
-import BodyWrapper from './BodyWrapper.jsx';
-import Members from './members/Members.jsx';
+import Section from './Section';
+import LandingSplash from './LandingSplash';
+import BodyWrapper from './BodyWrapper';
+import '../overrides.css';
+import Faq from './Faq';
+import Blurbs from './blurbs';
+import Members from './members/Members';
 
-const sectionList = ['home', 'what we do', 'members', "where we've worked", 'faq', 'contact'];
+const Home = () => (
+  <ReactFullpage
+    navigation
+    sectionsColor={['rgba(0,0,0,0)', '#24306c', '#24306c', '#24306c', '#24306c']}
+    render={() => (
+      <div>
+        <LandingSplash />
 
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <ReactFullpage
-        navigation
-        sectionsColor={['rgba(0,0,0,0)', 'rgba(0,0,0,0)', '#24306c', '#24306c']}
-        render={({ state, fullpageApi }) => (
-          <div>
-            <LandingSplash />
-
-            <div className="section">
-              <Section
-                titleWhite="what we "
-                titlePink="do()"
-                bodyComponent={(
-                  <BodyWrapper style={{ minHeight: '100%', minWidth: '100%' }} basic>
-                    <span>
-                      At Catalyst, we organize and host both pre-professional and social events.
-                      Some pre-professional events we've hosted in the past include resume
-                      workshops, tutorial workshops, and guest speakers. Social events include
-                      casual dinners, parties, and SkyZone.
-                    </span>
-                  </BodyWrapper>
+        <div className="section">
+          <Section
+            titleWhite="what we "
+            titlePink="do()"
+            bodyComponent={(
+              <BodyWrapper style={{ minHeight: '100%', minWidth: '100%' }} basic>
+                <Blurbs section="what we do" />
+              </BodyWrapper>
 )}
-                widthRatio={4}
-                heightRatio={3}
-              />
-            </div>
+            widthRatio={4}
+            heightRatio={3}
+          />
+        </div>
 
-            <Members />
+        <Members />
 
-            <div className="section">
-              <Section
-                leftComponent={(
-                  <div>
-                    <h1> JANE LI </h1>
-                  </div>
+        <div className="section">
+          <Section
+            leftComponent={(
+              <div>
+                <h1> JANE LI </h1>
+              </div>
 )}
-                titleWhite="members"
-                titlePink="[]"
-                bodyComponent={<h1> BOOM </h1>}
-                widthRatio={4}
-                heightRatio={3}
-              />
-            </div>
-          </div>
-        )}
-      />
-    );
-  }
-}
+            titleWhite="members"
+            titlePink="[]"
+            bodyComponent={<h1> BOOM </h1>}
+            widthRatio={4}
+            heightRatio={3}
+          />
+        </div>
+        <div className="section">
+          <Section
+            titleWhite="faq"
+            titlePink="?"
+            bodyComponent={<Faq />}
+            widthRatio={4}
+            heightRatio={3}
+          />
+        </div>
+      </div>
+    )}
+  />
+);
+
+export default Home;

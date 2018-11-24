@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Grid from '@material-ui/core/Grid';
 import MemberCard from './MemberCard';
 import MemberChoice from './MemberChoice';
-import Section from '../Section.jsx';
+import Section from '../Section';
 
 import '../../css/members/Members.css';
 import catalystLogo from '../../assets/chevron.svg';
@@ -30,7 +29,7 @@ export default class Members extends Component {
       .then((response) => {
         this.setState({ members: response.data.members });
       })
-      .catch(error => console.log(error));
+      .catch(() => {});
   }
 
   render() {

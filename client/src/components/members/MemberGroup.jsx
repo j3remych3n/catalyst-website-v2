@@ -5,9 +5,13 @@ import MemberPreview from './MemberPreview';
 import '../../css/members/MemberGroup.css';
 
 export default class MemberGroup extends Component {
-  state = {
-    selected: null,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selected: null,
+    };
+  }
 
   render() {
     const { members, onSelect } = this.props;

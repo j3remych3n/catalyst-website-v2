@@ -1,14 +1,14 @@
 @font-face {
-  font-family: 'GlacialIndifference';
-  src: url('./assets/fonts/GlacialIndifference-Regular.otf');
+  font-family: "GlacialIndifference";
+  src: url("./assets/fonts/GlacialIndifference-Regular.otf");
 }
 
 @font-face {
-  font-family: 'HKGrotesk';
-  src: url('./assets/fonts/HKGrotesk-Regular.otf');
+  font-family: "HKGrotesk";
+  src: url("./assets/fonts/HKGrotesk-Regular.otf");
 }
 
 @font-face {
-  font-family: 'Nunito';
-  src: url('./assets/fonts/Nunito-Light.ttf');
+  font-family: "Nunito";
+  src: url("./assets/fonts/Nunito-Light.ttf");
 }

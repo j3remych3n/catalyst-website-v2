@@ -1,41 +1,38 @@
-import React, { Component } from "react";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import "../fonts.css";
-import chevron from "../assets/chevron.svg";
-import colors from "../colors.js";
-import Delay from "react-delay";
-import Fade from "react-reveal/Fade";
+import React from 'react';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import '../fonts.css';
+import Delay from 'react-delay';
+import Fade from 'react-reveal/Fade';
+import chevron from '../assets/chevron.svg';
+import colors from '../colors';
 
 const style = {
   canvas: {
-    backgroundColor: "rgba(0,0,0,0)",
-    paddingRight: "10%"
+    backgroundColor: 'rgba(0,0,0,0)',
+    paddingRight: '10%',
   },
   catalyst: {
-    fontFamily: "HKGrotesk",
+    fontFamily: 'HKGrotesk',
     color: colors.gray,
-    fontSize: 160
+    fontSize: 160,
   },
   chevron: {
-    marginBottom: -25
+    marginBottom: -25,
   },
   subheader: {
-    fontFamily: "GlacialIndifference",
-    color: "#515151",
-    fontSize: 30
-  }
+    fontFamily: 'GlacialIndifference',
+    color: '#515151',
+    fontSize: 30,
+  },
 };
-
-const w = window.innerWidth;
-const h = window.innerHeight;
 
 const LandingSplash = () => (
   <Paper className="section" elevation={0} style={style.canvas}>
     <Grid
       container
-      style={{ minHeight: "100%", zIndex: 1, backgroundColor: "rba(0,0,0,0)" }}
+      style={{ minHeight: '100%', zIndex: 1, backgroundColor: 'rba(0,0,0,0)' }}
       justify="center"
       alignItems="flex-end"
       direction="column"
@@ -44,7 +41,7 @@ const LandingSplash = () => (
         <Delay wait={100}>
           <Fade>
             <Typography style={style.catalyst} variant="h5" component="h3">
-              <img src={chevron} width="130" style={style.chevron} />
+              <img src={chevron} width="130" style={style.chevron} alt="Catalyst logo" />
               catalyst
             </Typography>
           </Fade>
@@ -54,22 +51,20 @@ const LandingSplash = () => (
         <Delay wait={100}>
           <Fade>
             <Typography component="p" style={style.subheader}>
-              duke's premier shitposting tech frat ben hubsch yolo swag.
+              dukes premier shitposting tech frat ben hubsch yolo swag.
             </Typography>
           </Fade>
         </Delay>
       </Grid>
       <svg
-        width={1.5 * w}
-        height={(2753 * (1.5 * w)) / 2917}
         viewBox="0 0 2917 2753"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{
-          position: "absolute",
+          position: 'absolute',
           zIndex: -1,
-          paddingTop: "150%",
-          marginLeft: "25%"
+          paddingTop: '150%',
+          marginLeft: '25%',
         }}
       >
         <path
