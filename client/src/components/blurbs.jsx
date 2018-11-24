@@ -15,7 +15,7 @@ export default class Blurbs extends Component {
       .then((response) => {
         this.setState({ blurbs: response.data.val });
       })
-      .catch(() => {});
+      .catch(err => console.err(err));
   }
 
   render() {

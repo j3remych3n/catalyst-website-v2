@@ -61,7 +61,7 @@ export default class WwdCarousel extends Component {
     axios
       .get('/api/grouppictures')
       .then(response => this.setState({ pics: response.data.pictures }))
-      .catch(() => {});
+      .catch(err => console.err(err));
   }
 
   render() {
