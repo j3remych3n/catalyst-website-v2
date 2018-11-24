@@ -7,6 +7,7 @@ import '../overrides.css';
 import Faq from './Faq';
 import Blurbs from './blurbs';
 import Members from './members/Members';
+import CompanyCarousel from './CompanyCarousel';
 
 const sectionList = ['home', 'mission', 'what we do', 'members', "where we've worked", 'faqs'];
 
@@ -49,14 +50,9 @@ const Home = () => (
 
         <div className="section">
           <Section
-            leftComponent={(
-              <div>
-                <h1> JANE LI </h1>
-              </div>
-)}
-            titleWhite="members"
-            titlePink="[]"
-            bodyComponent={<h1> BOOM </h1>}
+            titleWhite="where we've worked"
+            titlePink=":"
+            bodyComponent={<CompanyCarousel />}
             widthRatio={4}
           />
         </div>
