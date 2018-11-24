@@ -22,25 +22,25 @@ const carouselSettings = {
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 1
-      }
+        slidesToShow: 1,
+      },
     },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 1
-      }
+        slidesToShow: 1,
+      },
     },
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 1
-      }
-    }
+        slidesToShow: 1,
+      },
+    },
   ],
   slidesToShow: 1,
   slidesToScroll: 1,
-  speed: 500
+  speed: 500,
 };
 
 export default class CompanyCarousel extends Component {
@@ -54,7 +54,7 @@ export default class CompanyCarousel extends Component {
     };
 
     axios
-      .get("/api/companies")
+      .get('/api/companies')
       .then(response => this.setState({ companies: response.data.logos }))
       .catch(() => {});
   }
