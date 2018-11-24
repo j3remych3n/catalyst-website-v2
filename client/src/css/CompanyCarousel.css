@@ -1,0 +1,24 @@
+.logo {
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: auto;
+}
+
+.logo-container {
+  width: 50px;
+}
+
+.carouselContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 50%;
+}
+
+.carousel {
+  min-width: 50px;
+  min-height: 50px;
+}

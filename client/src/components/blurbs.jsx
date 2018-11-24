@@ -1,21 +1,19 @@
-import React, { Component } from "react";
-import axios from "axios";
-import uuidv1 from "uuid/v1";
-import colors from "../colors.js";
+import React, { Component } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 
 export default class Blurbs extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      blurbs: ""
+      blurbs: '',
     };
 
     axios
-      .get("/api/wwd/" + props.section)
-      .then(response => {
+      .get(`/api/wwd/${props.section}`)
+      .then((response) => {
         this.setState({ blurbs: response.data.val });
-        console.log(response);
       })
       .catch(() => {});
   }
@@ -23,15 +21,12 @@ export default class Blurbs extends Component {
   render() {
     const { blurbs } = this.state;
 
-    if (blurbs === "") return "";
-    console.log(blurbs);
-    // for (var obj in blurbs) {
-    //     //   console.log(obj);
-    //     if (props.section === obj.Key) {
-    //       renData = obj.Value;
-    //     }
-    //   }
+    if (blurbs === '') return '';
 
     return <span>{blurbs}</span>;
   }
 }
+
+Blurbs.propTypes = {
+  section: PropTypes.string.isRequired,
+};

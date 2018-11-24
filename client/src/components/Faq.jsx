@@ -1,31 +1,31 @@
-import React, { Component } from "react";
-import axios from "axios";
-import uuidv1 from "uuid/v1";
-import colors from "../colors.js";
+import React, { Component } from 'react';
+import axios from 'axios';
+import uuidv1 from 'uuid/v1';
+import colors from '../colors';
 
 const styles = {
   qTag: {
     color: colors.pink,
-    display: "inline"
+    display: 'inline',
   },
   aTag: {
     color: colors.yellow,
-    display: "inline"
+    display: 'inline',
   },
   txtStyle: {
     color: colors.white,
-    display: "inline"
+    display: 'inline',
   },
   wrapStyle: {
-    minHeight: "100%",
-    minWidth: "100%",
-    addingLeft: "2.5%",
-    marginRight: "5%",
-    margin: "0",
-    fontSize: "19pt",
-    paddingTop: "5%",
-    fontFamily: "GlacialIndifference"
-  }
+    minHeight: '100%',
+    minWidth: '100%',
+    addingLeft: '2.5%',
+    marginRight: '5%',
+    margin: '0',
+    fontSize: '19pt',
+    paddingTop: '5%',
+    fontFamily: 'GlacialIndifference',
+  },
 };
 
 export default class Faq extends Component {
@@ -33,21 +33,21 @@ export default class Faq extends Component {
     super(props);
 
     this.state = {
-      faq: []
+      faq: [],
     };
 
     axios
-      .get("/api/faq")
+      .get('/api/faq')
       .then(response => this.setState({ faq: response.data.questions }))
       .catch(() => {});
   }
 
   render() {
     const { faq } = this.state;
-    const qTagOpen = "<q>";
-    const qTagClose = "</q>";
-    const aTagOpen = "<a>";
-    const aTagClose = "</a>";
+    const qTagOpen = '<q>';
+    const qTagClose = '</q>';
+    const aTagOpen = '<a>';
+    const aTagClose = '</a>';
 
     return (
       <div style={styles.wrapStyle} align="left">
