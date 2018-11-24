@@ -35,4 +35,7 @@
   font-family: 'Nunito';
   color: #fff;
   width: 131.25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

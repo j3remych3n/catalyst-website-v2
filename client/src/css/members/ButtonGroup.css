@@ -23,6 +23,6 @@
 }
 
 .ButtonGroup-unselected {
-  border-bottom: none;
+  border-bottom: 3px solid transparent;
   color: rgba(255, 255, 255, 0.65);
 }
