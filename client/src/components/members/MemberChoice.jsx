@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import MemberGroup from './MemberGroup';
 import ButtonGroup from './ButtonGroup';
 
-import '../../css/members/MemberChoice.css';
-
 export default class MemberChoice extends Component {
   constructor(props) {
     super(props);

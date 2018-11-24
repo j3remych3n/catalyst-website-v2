@@ -11,8 +11,6 @@ import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Grid from '@material-ui/core/Grid';
 
-import '../../css/members/MemberCard.css';
-
 const styles = {
   card: {
     maxWidth: 300,
