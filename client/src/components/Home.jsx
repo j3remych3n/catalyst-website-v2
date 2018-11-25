@@ -23,10 +23,11 @@ const Home = ({ device }) => (
 
         <div className="section">
           <Section
+            device={device}
             titleWhite="mission statement"
             titlePink=";"
             bodyComponent={(
-              <BodyWrapper>
+              <BodyWrapper device={device}>
                 <Blurbs section="who we are" />
               </BodyWrapper>
 )}
@@ -36,10 +37,11 @@ const Home = ({ device }) => (
 
         <div className="section">
           <Section
+            device={device}
             titleWhite="what we "
             titlePink="do()"
             bodyComponent={(
-              <BodyWrapper>
+              <BodyWrapper device={device}>
                 <Blurbs section="what we do" />
               </BodyWrapper>
 )}
@@ -47,10 +49,11 @@ const Home = ({ device }) => (
           />
         </div>
 
-        <Members />
+        <Members device={device} />
 
         <div className="section">
           <Section
+            device={device}
             titleWhite="where we've worked"
             titlePink=":"
             bodyComponent={<CompanyCarousel />}
@@ -58,7 +61,13 @@ const Home = ({ device }) => (
           />
         </div>
         <div className="section">
-          <Section titleWhite="faq" titlePink="?" bodyComponent={<Faq />} widthRatio={4} />
+          <Section
+            device={device}
+            titleWhite="faq"
+            titlePink="?"
+            bodyComponent={<Faq />}
+            widthRatio={4}
+          />
         </div>
       </div>
     )}

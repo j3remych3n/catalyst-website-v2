@@ -7,127 +7,111 @@ import Fade from 'react-reveal/Fade';
 import styled from 'styled-components';
 import colors from '../colors';
 
-const styles = {
-  left: {
-    backgroundColor: 'rgba(0, 0, 0, 0.0)',
-    minHeight: '100%',
-    minWidth: '100%',
-    color: 'white',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  header: {
-    backgroundColor: 'rgba(255, 255, 255, 0.0)',
-    minHeight: '100%',
-    minWidth: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    paddingLeft: '2.5%',
-  },
-
-  sectionBody: {
-    backgroundColor: 'rgba(100, 255, 255, 0.0)',
-    minHeight: '100%',
-    minWidth: '100%',
-    color: 'white',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  sectionTitle: {
-    fontSize: '80pt',
-    fontFamily: 'GlacialIndifference',
-    color: 'white',
-  },
-
-  titleAnnotation: {
-    color: colors.pink,
-  },
-};
-
 const Main = styled(Grid)`
-  min-height: 90%;
-  padding-right: 5%;
-
-  @media screen and (min-width: 640px) {
-    min-height: 75%;
-  }
+  min-height: ${props => (props.device === 'desktop' ? '75%' : '90%')} !important;
+  padding: 5% !important;
 `;
 
 const Top = styled(Grid)`
-  height: 35%;
-  display: inline-block;
-  width: 100%;
+  height: 20% !important;
+  display: inline-block !important;
+  width: 100% !important;
+`;
 
-  @media screen and (min-width: 640px) {
-    height: 20%;
-  }
+const Bottom = styled(Grid)`
+  height: 80% !important;
+  display: inline-block !important;
+  width: 100% !important;
+`;
+
+const Header = styled(Paper)`
+  background-color: rgba(255, 255, 255, 0) !important;
+  min-height: 100% !important;
+  min-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  padding-left: 2.5% !important;
+`;
+
+const Left = styled(Paper)`
+  background-color: rgba(0, 0, 0, 0) !important;
+  min-height: 100% !important;
+  min-width: 100% !important;
+  color: white !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+`;
+
+const SectionTitle = styled.span`
+  font-size: ${props => (props.device === 'desktop' ? '60pt' : '40pt')};
+  font-family: GlacialIndifference;
+  color: ${colors.white};
+`;
+
+const TitleAnnotation = styled.span`
+  color: ${colors.pink};
 `;
 
 const Section = ({
-  widthRatio, leftComponent, titleWhite, titlePink, bodyComponent,
-}) => (
-  <div>
-    <Main container xs={12}>
-      <Grid
-        item
-        style={{
-          minHeight: '100%',
-        }}
-        xs={widthRatio}
-      >
-        <Top item>
-          <Paper elevation={0} style={styles.header} />
-        </Top>
+  widthRatio,
+  leftComponent,
+  titleWhite,
+  titlePink,
+  bodyComponent,
+  device,
+  renderLeft,
+}) => {
+  let dir = 'row';
+  if (device === 'mobile' && !renderLeft) {
+    widthRatio = 0;
+    dir = 'column';
+  }
+  return (
+    <div>
+      <Main device={device} direction={dir} container xs={12}>
+        <Grid item xs={widthRatio}>
+          <Top item>
+            <Header device={device} elevation={0} />
+          </Top>
 
-        <Grid
-          item
-          style={{
-            height: '80%',
-          }}
-        >
-          <Paper elevation={0} style={styles.left}>
-            <Delay wait={1000}>
-              <Fade>{leftComponent}</Fade>
+          <Bottom device={device} item>
+            <Left elevation={0}>
+              <Delay wait={1000}>
+                <Fade>{leftComponent}</Fade>
+              </Delay>
+            </Left>
+          </Bottom>
+        </Grid>
+
+        <Grid item xs={12 - widthRatio}>
+          <Top device={device} item>
+            <Delay wait={600}>
+              <Fade>
+                <Header device={device} elevation={0}>
+                  <SectionTitle device={device}>
+                    {titleWhite}
+                    <TitleAnnotation device={device}>{titlePink}</TitleAnnotation>
+                  </SectionTitle>
+                </Header>
+              </Fade>
             </Delay>
-          </Paper>
-        </Grid>
-      </Grid>
+          </Top>
 
-      <Grid item style={{}} xs={12 - widthRatio}>
-        <Top item>
-          <Delay wait={600}>
-            <Fade>
-              <Paper elevation={0} style={styles.header}>
-                <span style={styles.sectionTitle}>
-                  {titleWhite}
-                  <span style={styles.titleAnnotation}>{titlePink}</span>
-                </span>
-              </Paper>
-            </Fade>
-          </Delay>
-        </Top>
-
-        <Grid
-          item
-          style={{
-            height: '80%',
-          }}
-        >
-          <Delay wait={1000}>
-            <Fade>{bodyComponent}</Fade>
-          </Delay>
+          <Bottom device={device} item>
+            <Delay wait={1000}>
+              <Fade>{bodyComponent}</Fade>
+            </Delay>
+          </Bottom>
         </Grid>
-      </Grid>
-    </Main>
-  </div>
-);
+      </Main>
+    </div>
+  );
+};
 
 Section.defaultProps = {
   leftComponent: <div />,
+  renderLeft: false,
 };
 
 Section.propTypes = {
@@ -136,6 +120,8 @@ Section.propTypes = {
   titlePink: PropTypes.string.isRequired,
   bodyComponent: PropTypes.element.isRequired,
   widthRatio: PropTypes.number.isRequired,
+  device: PropTypes.string.isRequired,
+  renderLeft: PropTypes.bool,
 };
 
 export default Section;

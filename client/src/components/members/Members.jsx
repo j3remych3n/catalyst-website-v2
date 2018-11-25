@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import MemberCard from './MemberCard';
 import MemberChoice from './MemberChoice';
@@ -24,6 +25,9 @@ export default class Members extends Component {
       selected: DEFAULT_CARD,
       members: [DEFAULT_CARD],
     };
+  }
+
+  componentDidMount() {
     axios
       .get('/api/members')
       .then((response) => {
@@ -34,9 +38,11 @@ export default class Members extends Component {
 
   render() {
     const { selected, members } = this.state;
+    const { device } = this.props;
     return (
       <div className="section">
         <Section
+          device={device}
           leftComponent={<MemberCard selected={selected} />}
           titleWhite="members"
           titlePink="[]"
@@ -53,4 +59,6 @@ export default class Members extends Component {
   }
 }
 
-Members.propTypes = {};
+Members.propTypes = {
+  device: PropTypes.string.isRequired,
+};
