@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import MemberGroup from './MemberGroup';
 import ButtonGroup from './ButtonGroup';
 
-import '../../css/members/MemberChoice.css';
-
 export default class MemberChoice extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +27,7 @@ export default class MemberChoice extends Component {
     const { years, membersByYear, chosenYear } = this.state;
     const { onSelect } = this.props;
     return (
-      <div className="MemberChoice-container">
+      <div>
         <ButtonGroup choices={years} chooseYear={year => this.setState({ chosenYear: year })} />
         <MemberGroup members={membersByYear[chosenYear]} onSelect={onSelect} />
       </div>

@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import Grid from '@material-ui/core/Grid';
 import axios from 'axios';
 import uuidv1 from 'uuid/v1';
+import styled from 'styled-components';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -50,6 +51,12 @@ const styles = {
   },
 };
 
+const CarouImage = styled.img`
+  max-width: 480px,
+  max-height: 320px,
+  border-radius: 7px,
+`;
+
 export default class WwdCarousel extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +68,7 @@ export default class WwdCarousel extends Component {
     axios
       .get('/api/grouppictures')
       .then(response => this.setState({ pics: response.data.pictures }))
-      .catch(() => {});
+      .catch(err => console.err(err));
   }
 
   render() {
@@ -71,7 +78,7 @@ export default class WwdCarousel extends Component {
         <Slider {...carouselSettings}>
           {pics.map(pic => (
             <div key={uuidv1()}>
-              <img src={pic} alt="" className="Logo-resp" style={styles.images} />
+              <CarouImage src={pic} alt="" className="Logo-resp" />
             </div>
           ))}
         </Slider>

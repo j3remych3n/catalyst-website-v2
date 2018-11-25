@@ -1,30 +1,31 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import colors from '../colors';
 
-const styles = {
-  fillPaper: {
-    minHeight: '100%',
-    minWidth: '100%',
-    backgroundColor: 'rgba(0,0,0,0)',
-    paddingLeft: '2.5%',
-    marginRight: '5%',
-    margin: '0',
-    paddingTop: '5%',
-    fontFamily: 'GlacialIndifference',
-    fontSize: '25pt',
-    color: 'white',
-  },
-};
+const StyledPaper = styled(Paper)`
+  min-height: 100% !important;
+  min-width: 100% !important;
+  padding-left: 2.5% !important;
+  margin-right: 5% !important;
+  margin: 0 !important;
+  padding-top: ${({ device }) => (device === 'desktop' ? '5%' : '2%')} !important;
+  font-family: GlacialIndifference !important;
+  font-size: ${({ device }) => (device === 'desktop' ? '25pt' : '15pt')} !important;
+  color: ${colors.white} !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+`;
 
-const BodyWrapper = ({ children }) => (
-  <Paper elevation={0} style={styles.fillPaper}>
+const BodyWrapper = ({ children, device }) => (
+  <StyledPaper device={device} elevation={0}>
     {children}
-  </Paper>
+  </StyledPaper>
 );
 
 BodyWrapper.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  device: PropTypes.string.isRequired,
 };
 
 export default BodyWrapper;
