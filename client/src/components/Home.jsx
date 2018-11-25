@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
+import PropTypes from 'prop-types';
 import Section from './Section';
 import LandingSplash from './LandingSplash';
 import BodyWrapper from './BodyWrapper';
@@ -11,7 +12,7 @@ import CompanyCarousel from './CompanyCarousel';
 
 const sectionList = ['home', 'mission', 'what we do', 'members', "where we've worked", 'faqs'];
 
-const Home = () => (
+const Home = ({ device }) => (
   <ReactFullpage
     navigation
     sectionsColor={['rgba(0,0,0,0)', '#24306c', '#24306c', '#24306c', '#24306c', '#24306c']}
@@ -63,5 +64,9 @@ const Home = () => (
     )}
   />
 );
+
+Home.propTypes = {
+  device: PropTypes.string.isRequired,
+};
 
 export default Home;
