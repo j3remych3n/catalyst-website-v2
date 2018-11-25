@@ -16,7 +16,10 @@ const sectionList = ['home', 'mission', 'what we do', 'members', "where we've wo
 const CompanyWrapper = styled.div`
   min-width: 100%;
   min-height: 100%;
-  
+  ${({ device }) => device === 'mobile' && `
+    display: flex;
+    align-items: center;
+  `}
 `;
 
 const Home = ({ device }) => (

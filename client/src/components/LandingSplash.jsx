@@ -15,8 +15,8 @@ const Canvas = styled(Paper)`
 `;
 
 const VisibilityWrapper = styled.div`
-  background-color: rgba(255, 255, 255, ${props => (props.device === 'mobile' ? 0.9 : 0.6)});
-  border-radius: ${props => (props.device === 'mobile' ? '0px' : '20px')};
+  background-color: rgba(255, 255, 255, ${({ device }) => (device === 'mobile' ? 0.9 : 0.6)});
+  border-radius: ${({ device }) => (device === 'mobile' ? '0px' : '20px')};
   padding: 20px;
   backdrop-filter: blur(30px);
 `;
@@ -24,32 +24,32 @@ const VisibilityWrapper = styled.div`
 const Catalyst = styled(Typography)`
   font-family: HKGrotesk !important;
   color: ${colors.gray} !important;
-  font-size: ${props => (props.device === 'mobile' ? '60pt' : '130pt')} !important;
+  font-size: ${({ device }) => (device === 'mobile' ? '60pt' : '130pt')} !important;
 `;
 
 const CatalystChevron = styled.img.attrs({
-  width: props => (props.device === 'mobile' ? 60 : 130),
+  width: ({ device }) => (device === 'mobile' ? 60 : 130),
 })`
-  margin-bottom: ${props => (props.device === 'mobile' ? '-11px' : '-20px')};
+  margin-bottom: ${({ device }) => (device === 'mobile' ? '-11px' : '-20px')};
 `;
 
 const Subheader = styled(Typography)`
   font-family: GlacialIndifference !important;
   color: #515151 !important;
-  font-size: ${props => (props.device === 'mobile' ? '10pt' : '25pt')} !important;
+  font-size: ${({ device }) => (device === 'mobile' ? '10pt' : '25pt')} !important;
 `;
 
 const Landing = styled(Grid).attrs({
-  alignItems: props => (props.device === 'mobile' ? 'center' : 'flex-end'),
+  alignItems: ({ device }) => (device === 'mobile' ? 'center' : 'flex-end'),
   container: true,
   justify: 'center',
   direction: 'column',
 })`
   min-height: 100%;
   z-index: 2;
-  padding-right: ${props => (props.device === 'mobile' ? '0' : '10%')} !important;
+  padding-right: ${({ device }) => (device === 'mobile' ? '0' : '10%')} !important;
   background-color: rgba(0, 0, 0, 0);
-  padding-bottom: ${props => (props.device === 'mobile' ? '60%' : 0)} !important;
+  padding-bottom: ${({ device }) => (device === 'mobile' ? '60%' : 0)} !important;
 `;
 
 const LandingSplash = ({ device }) => (
