@@ -8,7 +8,6 @@ import colors from '../colors';
 const StyledPaper = styled(Paper)`
   min-height: 100%;
   min-width: 100%;
-  background-color: rgba(0, 0, 0, 0);
   padding-left: 2.5%;
   margin-right: 5%;
   margin: 0;
@@ -16,6 +15,7 @@ const StyledPaper = styled(Paper)`
   font-family: GlacialIndifference;
   font-size: 25pt;
   color: ${colors.white};
+  background-color: rgba(0, 0, 0, 0) !important;
 `;
 
 const BodyWrapper = ({ children }) => <StyledPaper elevation={0}>{children}</StyledPaper>;
