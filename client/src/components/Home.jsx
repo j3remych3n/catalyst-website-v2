@@ -5,7 +5,7 @@ import LandingSplash from './LandingSplash';
 import BodyWrapper from './BodyWrapper';
 import '../overrides.css';
 import Faq from './Faq';
-import Blurbs from './blurbs';
+import Blurbs from './Blurbs';
 import Members from './members/Members';
 import CompanyCarousel from './CompanyCarousel';
 
@@ -25,7 +25,7 @@ const Home = () => (
             titleWhite="mission statement"
             titlePink=";"
             bodyComponent={(
-              <BodyWrapper style={{ minHeight: '100%', minWidth: '100%' }} basic>
+              <BodyWrapper>
                 <Blurbs section="who we are" />
               </BodyWrapper>
 )}
@@ -38,7 +38,7 @@ const Home = () => (
             titleWhite="what we "
             titlePink="do()"
             bodyComponent={(
-              <BodyWrapper style={{ minHeight: '100%', minWidth: '100%' }} basic>
+              <BodyWrapper>
                 <Blurbs section="what we do" />
               </BodyWrapper>
 )}
