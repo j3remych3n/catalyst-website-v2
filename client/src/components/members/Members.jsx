@@ -29,7 +29,7 @@ export default class Members extends Component {
       .then((response) => {
         this.setState({ members: response.data.members });
       })
-      .catch(err => console.log(err));
+      .catch(() => {});
   }
 
   render() {
