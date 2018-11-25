@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import ReactFullpage from '@fullpage/react-fullpage';
 import PropTypes from 'prop-types';
 import Section from './Section';
@@ -12,14 +13,26 @@ import CompanyCarousel from './CompanyCarousel';
 
 const sectionList = ['home', 'mission', 'what we do', 'members', "where we've worked", 'faqs'];
 
+const CompanyWrapper = styled.div`
+  min-width: 100%;
+  min-height: 100%;
+  ${({ device }) => device === 'mobile'
+    && `
+    display: flex !important;
+    align-items: center !important;
+  `};
+`;
+
 const Home = ({ device }) => (
   <ReactFullpage
     navigation
-    sectionsColor={['rgba(0,0,0,0)', '#24306c', '#24306c', '#24306c', '#24306c', '#24306c']}
+    autoScrolling={device === 'desktop'}
+    fitToSection={device === 'desktop'}
+    sectionsColor={['rgba(0,0,0,0)', '#222E70', '#222E70', '#222E70', '#222E70', '#222E70']}
     navigationTooltips={sectionList}
     render={() => (
       <div>
-        <LandingSplash />
+        <LandingSplash device={device} />
 
         <div className="section">
           <Section
@@ -56,7 +69,11 @@ const Home = ({ device }) => (
             device={device}
             titleWhite="where we've worked"
             titlePink=":"
-            bodyComponent={<CompanyCarousel />}
+            bodyComponent={(
+              <CompanyWrapper device={device}>
+                <CompanyCarousel />
+              </CompanyWrapper>
+)}
             widthRatio={4}
           />
         </div>
