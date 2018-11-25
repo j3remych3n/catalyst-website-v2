@@ -1,15 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import styled from 'styled-components';
 
-import '../css/CompanyCarousel-arrow.css';
+import colors from '../colors';
+
+const RightArrow = styled.div`
+  cursor: pointer;
+  color: ${colors.white};
+  display: inline;
+  transform: scale(3);
+`;
 
 function CompanyCarouselRightArrow(props) {
   const { onClick } = props;
   return (
-    <div className="right-arrow">
+    <RightArrow>
       <KeyboardArrowRight onClick={onClick} />
-    </div>
+    </RightArrow>
   );
 }
 

@@ -1,7 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import '../../css/members/ButtonGroup.css';
+import colors from '../../colors';
+
+const ButtonGroupContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const YearButton = styled.div`
+  font-family: 'GlacialIndifference';
+  font-size: 20pt;
+  padding: 0px 8px 0px 8px;
+  margin: 4px;
+  outline: none;
+  color: ${({ selected }) => (selected ? '#fff' : 'rgba(255, 255, 255, 0.65)')};
+  border-bottom: ${({ selected }) => (selected ? `3px solid ${colors.pink}` : '3px solid transparent')};
+  font-weight: ${({ selected }) => (selected ? 'bold' : 'normal')};
+
+  :hover {
+    border-bottom: 3px solid ${colors.pink};
+    cursor: pointer;
+  }
+`;
 
 export default class ButtonGroup extends Component {
   constructor(props) {
@@ -18,31 +40,24 @@ export default class ButtonGroup extends Component {
     this.setState({ selected: choice });
 
     // resets the scrollbar
-    document.getElementsByClassName('MemberGroup-container')[0].scrollLeft = 0;
+    document.getElementById('scrollable').scrollLeft = 0;
   }
 
   render() {
     const { selected } = this.state;
     const { choices } = this.props;
     return (
-      <div className="ButtonGroup-container">
+      <ButtonGroupContainer>
         {choices.map(choice => (
-          <div
+          <YearButton
+            selected={choice === selected}
             onClick={() => this.handleClick(choice)}
-            className={
-              choice === selected
-                ? 'ButtonGroup-choice ButtonGroup-selected'
-                : 'ButtonGroup-choice ButtonGroup-unselected'
-            }
-            onKeyDown={() => {}}
-            role="button"
-            tabIndex={0}
             key={choice}
           >
             {choice}
-          </div>
+          </YearButton>
         ))}
-      </div>
+      </ButtonGroupContainer>
     );
   }
 }
