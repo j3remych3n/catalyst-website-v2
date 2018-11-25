@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Delay from 'react-delay';
 import Fade from 'react-reveal/Fade';
+import styled from 'styled-components';
 import colors from '../colors';
 
 const styles = {
@@ -47,18 +48,30 @@ const styles = {
   },
 };
 
+const Main = styled(Grid)`
+  min-height: 90%;
+  padding-right: 5%;
+
+  @media screen and (min-width: 640px) {
+    min-height: 75%;
+  }
+`;
+
+const Top = styled(Grid)`
+  height: 35%;
+  display: inline-block;
+  width: 100%;
+
+  @media screen and (min-width: 640px) {
+    height: 20%;
+  }
+`;
+
 const Section = ({
   widthRatio, leftComponent, titleWhite, titlePink, bodyComponent,
 }) => (
   <div>
-    <Grid
-      container
-      style={{
-        minHeight: '75%',
-        paddingRight: '5%',
-      }}
-      xs={12}
-    >
+    <Main container xs={12}>
       <Grid
         item
         style={{
@@ -66,16 +79,9 @@ const Section = ({
         }}
         xs={widthRatio}
       >
-        <Grid
-          item
-          style={{
-            height: '20%',
-            display: 'inline-block',
-            width: '100%',
-          }}
-        >
+        <Top item>
           <Paper elevation={0} style={styles.header} />
-        </Grid>
+        </Top>
 
         <Grid
           item
@@ -92,14 +98,7 @@ const Section = ({
       </Grid>
 
       <Grid item style={{}} xs={12 - widthRatio}>
-        <Grid
-          item
-          style={{
-            height: '20%',
-            display: 'inline-block',
-            width: '100%',
-          }}
-        >
+        <Top item>
           <Delay wait={600}>
             <Fade>
               <Paper elevation={0} style={styles.header}>
@@ -110,7 +109,7 @@ const Section = ({
               </Paper>
             </Fade>
           </Delay>
-        </Grid>
+        </Top>
 
         <Grid
           item
@@ -123,7 +122,7 @@ const Section = ({
           </Delay>
         </Grid>
       </Grid>
-    </Grid>
+    </Main>
   </div>
 );
 
