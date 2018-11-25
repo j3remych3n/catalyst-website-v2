@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import ReactFullpage from '@fullpage/react-fullpage';
 import PropTypes from 'prop-types';
 import Section from './Section';
@@ -12,17 +13,25 @@ import CompanyCarousel from './CompanyCarousel';
 
 const sectionList = ['home', 'mission', 'what we do', 'members', "where we've worked", 'faqs'];
 
+const CompanyWrapper = styled.div`
+  min-width: 100%;
+  min-height: 100%;
+  
+`;
+
 const Home = ({ device }) => (
   <ReactFullpage
     navigation
-    sectionsColor={['rgba(0,0,0,0)', '#24306c', '#24306c', '#24306c', '#24306c', '#24306c']}
+    autoScrolling={device === 'desktop'}
+    sectionsColor={['rgba(0,0,0,0)', '#222E70', '#222E70', '#222E70', '#222E70', '#222E70']}
     navigationTooltips={sectionList}
     render={() => (
       <div>
-        <LandingSplash />
+        <LandingSplash device={device} />
 
         <div className="section">
           <Section
+            device={device}
             titleWhite="mission statement"
             titlePink=";"
             bodyComponent={(
@@ -36,6 +45,7 @@ const Home = ({ device }) => (
 
         <div className="section">
           <Section
+            device={device}
             titleWhite="what we "
             titlePink="do()"
             bodyComponent={(
@@ -51,14 +61,21 @@ const Home = ({ device }) => (
 
         <div className="section">
           <Section
+            device={device}
             titleWhite="where we've worked"
             titlePink=":"
-            bodyComponent={<CompanyCarousel />}
+            bodyComponent={<CompanyWrapper device={device}><CompanyCarousel /></CompanyWrapper>}
             widthRatio={4}
           />
         </div>
         <div className="section">
-          <Section titleWhite="faq" titlePink="?" bodyComponent={<Faq />} widthRatio={4} />
+          <Section
+            device={device}
+            titleWhite="faq"
+            titlePink="?"
+            bodyComponent={<Faq />}
+            widthRatio={4}
+          />
         </div>
       </div>
     )}

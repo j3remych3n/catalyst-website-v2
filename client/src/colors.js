@@ -1,6 +1,6 @@
 const pink = '#ef827f';
 const lightblue = '#479fcc';
-const blue = '#24306c';
+const blue = '#222E70';
 const yellow = '#fbe79e';
 const purple = '#3e3a6d';
 const gray = '#555555';

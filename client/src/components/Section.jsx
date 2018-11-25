@@ -68,10 +68,10 @@ const Top = styled(Grid)`
 `;
 
 const Section = ({
-  widthRatio, leftComponent, titleWhite, titlePink, bodyComponent,
+  widthRatio, leftComponent, titleWhite, titlePink, bodyComponent, device,
 }) => (
   <div>
-    <Main container xs={12}>
+    <Main device={device} container xs={12}>
       <Grid
         item
         style={{
@@ -79,7 +79,7 @@ const Section = ({
         }}
         xs={widthRatio}
       >
-        <Top item>
+        <Top device={device} item>
           <Paper elevation={0} style={styles.header} />
         </Top>
 
@@ -98,7 +98,7 @@ const Section = ({
       </Grid>
 
       <Grid item style={{}} xs={12 - widthRatio}>
-        <Top item>
+        <Top device={device} item>
           <Delay wait={600}>
             <Fade>
               <Paper elevation={0} style={styles.header}>
@@ -131,6 +131,7 @@ Section.defaultProps = {
 };
 
 Section.propTypes = {
+  device: PropTypes.string.isRequired,
   leftComponent: PropTypes.element,
   titleWhite: PropTypes.string.isRequired,
   titlePink: PropTypes.string.isRequired,
