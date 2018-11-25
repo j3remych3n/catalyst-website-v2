@@ -10,9 +10,9 @@ const StyledPaper = styled(Paper)`
   padding-left: 2.5% !important;
   margin-right: 5% !important;
   margin: 0 !important;
-  padding-top: ${props => (props.device === 'desktop' ? '5%' : '2%')} !important;
+  padding-top: ${({ device }) => (device === 'desktop' ? '5%' : '2%')} !important;
   font-family: GlacialIndifference !important;
-  font-size: ${props => (props.device === 'desktop' ? '25pt' : '15pt')} !important;
+  font-size: ${({ device }) => (device === 'desktop' ? '25pt' : '15pt')} !important;
   color: ${colors.white} !important;
   background-color: rgba(0, 0, 0, 0) !important;
 `;

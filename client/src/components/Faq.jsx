@@ -25,7 +25,7 @@ const FaqContainer = styled.div`
   adding-left: 2.5%;
   margin-right: 5%;
   margin: 0;
-  font-size: ${props => (props.device === 'desktop' ? '19pt' : '12pt')} !important;
+  font-size: ${({ device }) => (device === 'desktop' ? '19pt' : '12pt')} !important;
   padding-top: 5%;
   font-family: GlacialIndifference;
 `;

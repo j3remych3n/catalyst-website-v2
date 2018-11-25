@@ -33,7 +33,7 @@ const Year = styled(Typography)`
 const Name = styled(Typography)`
   font-family: GlacialIndifference !important;
   color: ${colors.black} !important;
-  font-size: ${props => props.nameSize}pt !important;
+  font-size: ${({ nameSize }) => nameSize}pt !important;
 `;
 
 const Bio = styled(Typography)`

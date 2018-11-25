@@ -15,9 +15,9 @@ const YearButton = styled.div`
   padding: 0px 8px 0px 8px;
   margin: 4px;
   outline: none;
-  color: ${props => (props.selected ? '#fff' : 'rgba(255, 255, 255, 0.65)')};
-  border-bottom: ${props => (props.selected ? `3px solid ${colors.pink}` : '3px solid transparent')};
-  font-weight: ${props => (props.selected ? 'bold' : 'normal')};
+  color: ${({ selected }) => (selected ? '#fff' : 'rgba(255, 255, 255, 0.65)')};
+  border-bottom: ${({ selected }) => (selected ? `3px solid ${colors.pink}` : '3px solid transparent')};
+  font-weight: ${({ selected }) => (selected ? 'bold' : 'normal')};
 
   :hover {
     border-bottom: 3px solid ${colors.pink};

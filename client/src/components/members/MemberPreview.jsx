@@ -21,8 +21,8 @@ const MemberPreviewPicture = styled.img`
   height: 131.25px;
   border-radius: 50%;
   transition: opacity 0.25s;
-  border: ${props => (props.selected ? '3px solid #ff7b7b' : `1px solid ${colors.white}`)};
-  margin: ${props => (props.selected ? '3px' : '5px')};
+  border: ${({ selected }) => (selected ? '3px solid #ff7b7b' : `1px solid ${colors.white}`)};
+  margin: ${({ selected }) => (selected ? '3px' : '5px')};
 
   :hover {
     opacity: 0.8;
@@ -39,21 +39,18 @@ const MemberPreviewName = styled.div`
   align-items: center;
 `;
 
-const MemberPreview = (props) => {
-  const {
-    name, imageSrc, isSelected, onSelect,
-  } = props;
-  return (
-    <MemberPreviewMember onClick={onSelect}>
-      <MemberPreviewPicture src={imageSrc} alt={name} selected={isSelected} />
-      <MemberPreviewName>
-        <Textfit max={20} mode="single">
-          {name}
-        </Textfit>
-      </MemberPreviewName>
-    </MemberPreviewMember>
-  );
-};
+const MemberPreview = ({
+  name, imageSrc, isSelected, onSelect,
+}) => (
+  <MemberPreviewMember onClick={onSelect}>
+    <MemberPreviewPicture src={imageSrc} alt={name} selected={isSelected} />
+    <MemberPreviewName>
+      <Textfit max={20} mode="single">
+        {name}
+      </Textfit>
+    </MemberPreviewName>
+  </MemberPreviewMember>
+);
 
 MemberPreview.propTypes = {
   imageSrc: PropTypes.string.isRequired,

@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import colors from '../colors';
 
 const Main = styled(Grid)`
-  min-height: ${props => (props.device === 'desktop' ? '75%' : '90%')} !important;
+  min-height: ${({ device }) => (device === 'desktop' ? '75%' : '90%')} !important;
   padding: 5% !important;
 `;
 
@@ -44,7 +44,7 @@ const Left = styled(Paper)`
 `;
 
 const SectionTitle = styled.span`
-  font-size: ${props => (props.device === 'desktop' ? '60pt' : '40pt')};
+  font-size: ${({ device }) => (device === 'desktop' ? '60pt' : '40pt')};
   font-family: GlacialIndifference;
   color: ${colors.white};
 `;
