@@ -11,7 +11,25 @@ import Blurbs from './Blurbs';
 import Members from './members/Members';
 import CompanyCarousel from './CompanyCarousel';
 
-const sectionList = ['home', 'mission', 'what we do', 'members', "where we've worked", 'faqs'];
+const sectionList = [
+  'home',
+  'mission',
+  'what we do',
+  'members',
+  "where we've worked",
+  'faqs',
+  'contact us',
+];
+
+const sectionColors = [
+  'rgba(0,0,0,0)',
+  '#222E70',
+  '#222E70',
+  '#222E70',
+  '#222E70',
+  '#222E70',
+  '#222E70',
+];
 
 const CompanyWrapper = styled.div`
   min-width: 100%;
@@ -28,7 +46,7 @@ const Home = ({ device }) => (
     navigation
     autoScrolling={device === 'desktop'}
     fitToSection={device === 'desktop'}
-    sectionsColor={['rgba(0,0,0,0)', '#222E70', '#222E70', '#222E70', '#222E70', '#222E70']}
+    sectionsColor={sectionColors}
     navigationTooltips={sectionList}
     render={() => (
       <div>
@@ -82,7 +100,16 @@ const Home = ({ device }) => (
             device={device}
             titleWhite="faq"
             titlePink="?"
-            bodyComponent={<Faq />}
+            bodyComponent={<Faq device={device} />}
+            widthRatio={4}
+          />
+        </div>
+        <div className="section">
+          <Section
+            device={device}
+            titleWhite="contact us"
+            titlePink=">"
+            bodyComponent={<div />}
             widthRatio={4}
           />
         </div>

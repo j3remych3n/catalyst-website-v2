@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import uuidv1 from 'uuid/v1';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import colors from '../colors';
 
@@ -22,15 +23,15 @@ const QorA = styled.div`
 const FaqContainer = styled.div`
   min-height: 100%;
   min-width: 100%;
-  adding-left: 2.5%;
+  padding-left: 2.5%;
   margin-right: 5%;
   margin: 0;
-  font-size: ${({ device }) => (device === 'desktop' ? '19pt' : '12pt')} !important;
+  font-size: ${({ device }) => (device === 'desktop' ? '25pt' : '15pt')} !important;
   padding-top: 5%;
   font-family: GlacialIndifference;
 `;
 
-export default class Faq extends Component {
+class Faq extends Component {
   constructor(props) {
     super(props);
 
@@ -46,9 +47,10 @@ export default class Faq extends Component {
 
   render() {
     const { faq } = this.state;
+    const { device } = this.props;
 
     return (
-      <FaqContainer>
+      <FaqContainer device={device}>
         {faq.map(pair => (
           <div key={uuidv1()}>
             <div>
@@ -68,3 +70,9 @@ export default class Faq extends Component {
     );
   }
 }
+
+Faq.propTypes = {
+  device: PropTypes.string.isRequired,
+};
+
+export default Faq;
