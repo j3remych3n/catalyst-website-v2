@@ -10,6 +10,7 @@ import Faq from './Faq';
 import Blurbs from './Blurbs';
 import Members from './members/Members';
 import CompanyCarousel from './CompanyCarousel';
+import ContactUs from './ContactUs';
 
 const sectionList = [
   'home',
@@ -109,7 +110,7 @@ const Home = ({ device }) => (
             device={device}
             titleWhite="contact us"
             titlePink=">"
-            bodyComponent={<div />}
+            bodyComponent={<ContactUs device={device} />}
             widthRatio={4}
           />
         </div>
