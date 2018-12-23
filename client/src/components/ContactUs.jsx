@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
+import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import colors from '../colors';
@@ -27,9 +28,9 @@ const ContactButton = styled(Button)`
 
 const buttonContent = [
   {
-    color: colors.white,
+    color: colors.gray,
     text: 'email',
-    textColor: colors.black,
+    textColor: colors.white,
     link: 'mailto:dukecatalyst@gmail.com',
     icon: 'poop',
   },
@@ -53,7 +54,13 @@ const contactButtons = (width, device) => buttonContent.map(({
   color, text, textColor, link,
 }) => (
   <Grid item xs={width}>
-    <ContactButton href={link} color={color} device={device} textColor={textColor}>
+    <ContactButton
+      variant="contained"
+      href={link}
+      color={color}
+      device={device}
+      textColor={textColor}
+    >
       {text}
     </ContactButton>
   </Grid>
@@ -63,10 +70,12 @@ const ContactUs = ({ device }) => {
   const dir = device === 'desktop' ? 'row' : 'column';
   const buttonWidth = device === 'desktop' ? 4 : 10;
   return (
-    <ContactContainer device={device} elevation={0}>
-      <Grid container spacing={16} direction={dir}>
-        {contactButtons(buttonWidth, device)}
-      </Grid>
+    <ContactContainer device={device}>
+      <Paper style={{ padding: '14px' }}>
+        <Grid container spacing={16} direction={dir}>
+          {contactButtons(buttonWidth, device)}
+        </Grid>
+      </Paper>
     </ContactContainer>
   );
 };
