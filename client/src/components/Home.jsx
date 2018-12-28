@@ -10,6 +10,7 @@ import Faq from './Faq';
 import Blurbs from './Blurbs';
 import Members from './members/Members';
 import CompanyCarousel from './CompanyCarousel';
+import SingleImageCarousel from './SingleImageCarousel';
 import ContactUs from './ContactUs';
 
 const sectionList = [
@@ -72,6 +73,11 @@ const Home = ({ device }) => (
             device={device}
             titleWhite="what we "
             titlePink="do()"
+            leftComponent={(
+              <div>
+                <SingleImageCarousel />
+              </div>
+)}
             bodyComponent={(
               <BodyWrapper device={device}>
                 <Blurbs section="what we do" />

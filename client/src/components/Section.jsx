@@ -74,7 +74,6 @@ const Section = ({
           <Top item>
             <Header device={device} elevation={0} />
           </Top>
-
           <Bottom device={device} item>
             <Left elevation={0}>
               <Delay wait={1000}>
