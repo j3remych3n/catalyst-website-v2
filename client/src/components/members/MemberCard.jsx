@@ -49,7 +49,7 @@ const MemberPhoto = styled(CardMedia)`
 `;
 
 const MemberCardContainer = styled(Card)`
-  max-width: 300px !important;
+  max-width: 350px !important;
 `;
 
 const SocialLinks = styled(CardActions)`

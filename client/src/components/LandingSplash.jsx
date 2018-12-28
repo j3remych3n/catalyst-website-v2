@@ -10,6 +10,8 @@ import styled from 'styled-components';
 import chevron from '../assets/svgs/cata_chevron.svg';
 import colors from '../colors';
 
+const headerCopy = "Duke's premier social and pre-professional tech organization";
+
 const Canvas = styled(Paper)`
   background-color: rgba(0, 0, 0, 0) !important;
 `;
@@ -70,7 +72,7 @@ const LandingSplash = ({ device }) => (
           <Delay wait={400}>
             <Fade>
               <Subheader device={device} components="p" align="right">
-                dukes premier shitposting tech frat ben hubsch yolo swag.
+                {headerCopy}
               </Subheader>
             </Fade>
           </Delay>

@@ -5,6 +5,8 @@ import Paper from '@material-ui/core/Paper';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import Delay from 'react-delay';
+import Fade from 'react-reveal/Fade';
 import colors from '../colors';
 
 const ContactContainer = styled.div`
@@ -17,7 +19,7 @@ const ContactContainer = styled.div`
 `;
 
 const ContactButton = styled(Button)`
-  min-height: 400px !important;
+  min-height: ${({ device }) => (device === 'desktop' ? '400px' : '175px')} !important;
   min-width: 100% !important;
   font-family: GlacialIndifference !important;
   font-size: ${({ device }) => (device === 'desktop' ? '25pt' : '15pt')} !important;
@@ -52,17 +54,21 @@ const buttonContent = [
 
 const contactButtons = (width, device) => buttonContent.map(({
   color, text, textColor, link,
-}) => (
-  <Grid item xs={width}>
-    <ContactButton
-      variant="contained"
-      href={link}
-      color={color}
-      device={device}
-      textColor={textColor}
-    >
-      {text}
-    </ContactButton>
+}, index) => (
+  <Grid item xs={device === 'mobile' ? 12 : width}>
+    <Delay wait={800 * index}>
+      <Fade>
+        <ContactButton
+          variant="contained"
+          onClick={() => window.open(link, '_blank').focus()}
+          color={color}
+          device={device}
+          textColor={textColor}
+        >
+          {text}
+        </ContactButton>
+      </Fade>
+    </Delay>
   </Grid>
 ));
 
@@ -71,11 +77,15 @@ const ContactUs = ({ device }) => {
   const buttonWidth = device === 'desktop' ? 4 : 10;
   return (
     <ContactContainer device={device}>
-      <Paper style={{ padding: '14px' }}>
-        <Grid container spacing={16} direction={dir}>
-          {contactButtons(buttonWidth, device)}
-        </Grid>
-      </Paper>
+      <Delay wait={100}>
+        <Fade>
+          <Paper style={{ padding: '14px' }}>
+            <Grid container spacing={16} direction={dir}>
+              {contactButtons(buttonWidth, device)}
+            </Grid>
+          </Paper>
+        </Fade>
+      </Delay>
     </ContactContainer>
   );
 };

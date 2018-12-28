@@ -69,7 +69,7 @@ const Section = ({
   }
   return (
     <div>
-      <Main device={device} direction={dir} container xs={12}>
+      <Main device={device} direction={dir} container>
         <Grid item xs={widthRatio}>
           <Top item>
             <Header device={device} elevation={0} />

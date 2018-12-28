@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
+import Delay from 'react-delay';
+import Fade from 'react-reveal/Fade';
 import MemberPreview from './MemberPreview';
 import colors from '../../colors';
 
@@ -50,34 +51,38 @@ export default class MemberGroup extends Component {
     const firstHalf = members.slice(0, half);
     const secondHalf = members.slice(half);
     return (
-      <MemberGroupContainer id="scrollable">
-        <MemberGroupRow>
-          {firstHalf.map(member => (
-            <MemberPreview
-              key={member.name}
-              isSelected={member.name === selected}
-              onSelect={() => {
-                this.setState({ selected: member.name });
-                onSelect(member);
-              }}
-              {...member}
-            />
-          ))}
-        </MemberGroupRow>
-        <MemberGroupRow>
-          {secondHalf.map(member => (
-            <MemberPreview
-              key={member.name}
-              isSelected={member.name === selected}
-              onSelect={() => {
-                this.setState({ selected: member.name });
-                onSelect(member);
-              }}
-              {...member}
-            />
-          ))}
-        </MemberGroupRow>
-      </MemberGroupContainer>
+      <Delay wait={200}>
+        <Fade>
+          <MemberGroupContainer id="scrollable">
+            <MemberGroupRow>
+              {firstHalf.map(member => (
+                <MemberPreview
+                  key={member.name}
+                  isSelected={member.name === selected}
+                  onSelect={() => {
+                    this.setState({ selected: member.name });
+                    onSelect(member);
+                  }}
+                  {...member}
+                />
+              ))}
+            </MemberGroupRow>
+            <MemberGroupRow>
+              {secondHalf.map(member => (
+                <MemberPreview
+                  key={member.name}
+                  isSelected={member.name === selected}
+                  onSelect={() => {
+                    this.setState({ selected: member.name });
+                    onSelect(member);
+                  }}
+                  {...member}
+                />
+              ))}
+            </MemberGroupRow>
+          </MemberGroupContainer>
+        </Fade>
+      </Delay>
     );
   }
 }

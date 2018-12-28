@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import uuidv1 from 'uuid/v1';
 import PropTypes from 'prop-types';
+import Delay from 'react-delay';
+import Fade from 'react-reveal/Fade';
 import styled from 'styled-components';
 import colors from '../colors';
 
@@ -51,20 +53,24 @@ class Faq extends Component {
 
     return (
       <FaqContainer device={device}>
-        {faq.map(pair => (
-          <div key={uuidv1()}>
-            <div>
-              <QTag>{'<q>'}</QTag>
-              <QorA>{pair.Key}</QorA>
-              <QTag>{'</q>'}</QTag>
-            </div>
-            <div>
-              <ATag>{'<a>'}</ATag>
-              <QorA>{pair.Value}</QorA>
-              <ATag>{'</a>'}</ATag>
-            </div>
-            <br />
-          </div>
+        {faq.map((pair, index) => (
+          <Delay wait={800 * index}>
+            <Fade>
+              <div key={uuidv1()}>
+                <div>
+                  <QTag>{'<q>'}</QTag>
+                  <QorA>{pair.Key}</QorA>
+                  <QTag>{'</q>'}</QTag>
+                </div>
+                <div>
+                  <ATag>{'<a>'}</ATag>
+                  <QorA>{pair.Value}</QorA>
+                  <ATag>{'</a>'}</ATag>
+                </div>
+                <br />
+              </div>
+            </Fade>
+          </Delay>
         ))}
       </FaqContainer>
     );
