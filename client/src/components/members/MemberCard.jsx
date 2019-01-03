@@ -44,8 +44,8 @@ const Bio = styled(Typography)`
 
 const MemberPhoto = styled(CardMedia)`
   object-fit: cover !important;
-  max-width: 300px !important;
-  max-height: 300px !important;
+  max-width: 350px !important;
+  max-height: 350px !important;
 `;
 
 const MemberCardContainer = styled(Card)`

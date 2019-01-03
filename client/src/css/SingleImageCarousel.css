@@ -1,3 +1,10 @@
+.carouselContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 100%;
+  min-height: 100%;
+}
 .left-arrow {
   cursor: pointer;
   color: white;

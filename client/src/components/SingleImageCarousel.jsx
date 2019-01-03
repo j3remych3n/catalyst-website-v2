@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import LeftArrow from './CompanyCarouselLeftArrow';
 import RightArrow from './CompanyCarouselRightArrow';
-import '../css/CompanyCarousel.css';
 import '../css/SingleImageCarousel.css';
 
 const styles = {
@@ -54,10 +53,4 @@ export default class SingleImageCarousel extends Component {
       </div>
     );
   }
-
-  // increment() {
-  //     window.setInterval(()=>{
-  //         this.state.index = (this.state.index + 1)%this.state.images.length;
-  //     },5000)
-  //   }
 }
