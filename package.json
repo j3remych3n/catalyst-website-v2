@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Catalyst website",
   "license": "MIT",
+  "engines": {
+    "node": "8.12.0"
+  },
   "scripts": {
     "client": "cd client && yarn start",
     "server": "cd server && nodemon server.js",
