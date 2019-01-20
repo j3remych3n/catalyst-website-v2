@@ -8,3 +8,6 @@ Repository for rehaul of v1 of Duke Catalyst's website
 - Photos should be square and centered around your head + rightside up
 - event photos (???)
 - company logos should preferably be the same height
+
+**Deployment to GCP**
+- 

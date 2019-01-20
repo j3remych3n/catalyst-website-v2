@@ -19,13 +19,11 @@ app.get('/api/members', (req, res) => {
           .filter(properties => properties.Status !== 'Alumnus') // needs to be updated in the Airtable annually
           .map(properties => ({
             name: properties.Name,
-            imageSrc: properties.Photo[0].url,
+            imageSrc: properties.Photo ? properties.Photo[0].url : '',
             year: properties.Year,
             giturl: properties.Github,
             linkedinurl: properties.LinkedIn,
-            bio: properties.Bio
-              ? properties.Bio.substring(0, MAX_BIO_LENGTH)
-              : 'This is a default bio that is used for testing.',
+            bio: properties.Bio ? properties.Bio.substring(0, MAX_BIO_LENGTH) : '',
             personalurl: properties['Personal Website'],
           })),
       });

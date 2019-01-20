@@ -44,7 +44,7 @@ class Faq extends Component {
     axios
       .get('/api/faq')
       .then(response => this.setState({ faq: response.data.questions }))
-      .catch(err => console.err(err));
+      .catch(err => console.error(err));
   }
 
   render() {
