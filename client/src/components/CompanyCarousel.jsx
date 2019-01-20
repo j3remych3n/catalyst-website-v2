@@ -82,7 +82,8 @@ export default class CompanyCarousel extends Component {
     axios
       .get('/api/companies')
       .then(response => this.setState({ companies: response.data.logos }))
-      .catch(err => console.err(err));
+      .catch(err => console.log(err));
+    // .catch(err => console.error(err));
   }
 
   next() {
