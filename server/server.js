@@ -13,11 +13,6 @@ app.get('/api/members', (req, res) => {
   catalystDb(TABLE_NAME)
     .select()
     .all((err, data) => {
-      console.log({
-        members: data
-          .map(member => member.fields)
-          .filter(properties => properties.Status !== 'Alumnus'),
-      });
       res.send({
         members: data
           .map(member => member.fields)
