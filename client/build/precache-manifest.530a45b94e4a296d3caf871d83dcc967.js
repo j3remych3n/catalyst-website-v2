@@ -24,16 +24,16 @@ self.__precacheManifest = [
     "url": "/static/media/cata_chevron.2547d1df.svg"
   },
   {
-    "revision": "c41c2502180f63ce383b6e3cc042617a",
-    "url": "/static/media/Nunito-Light.c41c2502.ttf"
+    "revision": "13dc531a2ffd9ca7eeb500515774fa74",
+    "url": "/static/media/GlacialIndifference-Regular.13dc531a.otf"
   },
   {
     "revision": "7afad275b1a8178e31ae",
     "url": "/static/js/main.7afad275.chunk.js"
   },
   {
-    "revision": "13dc531a2ffd9ca7eeb500515774fa74",
-    "url": "/static/media/GlacialIndifference-Regular.13dc531a.otf"
+    "revision": "c41c2502180f63ce383b6e3cc042617a",
+    "url": "/static/media/Nunito-Light.c41c2502.ttf"
   },
   {
     "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
