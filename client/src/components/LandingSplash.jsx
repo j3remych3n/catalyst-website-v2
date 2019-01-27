@@ -2,7 +2,7 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import '../fonts.css';
+import '../css/fonts.css';
 import Delay from 'react-delay';
 import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
@@ -100,21 +100,23 @@ const LandingSplash = ({ device }) => (
               paddingRight: '60%',
             }}
           >
-            <svg
-              style={{
-                minWidth: Math.max(1600, window.innerWidth * 1.5),
-                display: 'block',
-                margin: 'auto',
-              }}
-              viewBox="0 0 1440 4996"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M-831.963 208.711C517.037 -401.789 103 523.883 977.5 498.383C1070.27 495.678 1878.5 483.383 1977 569.883C2453.41 1505.24 976.036 6090.21 976.036 6090.21H-943.963C-943.963 6090.21 -2180.96 819.211 -831.963 208.711Z"
-                fill="#222E70"
-              />
-            </svg>
+            {device === 'desktop' && (
+              <svg
+                style={{
+                  minWidth: Math.max(1600, window.innerWidth * 1.5),
+                  display: 'block',
+                  margin: 'auto',
+                }}
+                viewBox="0 0 1440 4996"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M-831.963 208.711C517.037 -401.789 103 523.883 977.5 498.383C1070.27 495.678 1878.5 483.383 1977 569.883C2453.41 1505.24 976.036 6090.21 976.036 6090.21H-943.963C-943.963 6090.21 -2180.96 819.211 -831.963 208.711Z"
+                  fill="#222E70"
+                />
+              </svg>
+            )}
           </div>
         </div>
       </Fade>

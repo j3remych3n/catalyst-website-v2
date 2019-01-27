@@ -57,7 +57,7 @@ const Carousel = styled(Slider)`
 `;
 
 const LogoContainer = styled.div`
-  width: 50px;
+  width: 100px;
 `;
 
 const Logo = styled.img`
@@ -78,7 +78,6 @@ export default class CompanyCarousel extends Component {
     this.state = {
       companies: [],
     };
-
     axios
       .get('/api/companies')
       .then(response => this.setState({ companies: response.data.logos }))
