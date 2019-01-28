@@ -77,10 +77,6 @@ const Section = ({
     <div>
       <Main device={device} direction={dir} container>
         <Grid item xs={widthRatio}>
-          {/* <Top item>
-            <Header device={device} elevation={0} />
-          </Top> */}
-          {/* <Bottom device={device} item> */}
           <LeftWrap>
             <Left elevation={0}>
               <Delay wait={1000}>
@@ -88,7 +84,6 @@ const Section = ({
               </Delay>
             </Left>
           </LeftWrap>
-          {/* </Bottom> */}
         </Grid>
 
         <Grid item xs={12 - widthRatio}>

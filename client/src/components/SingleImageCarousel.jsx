@@ -32,14 +32,16 @@ export default class SingleImageCarousel extends Component {
   next() {
     const { images, index } = this.state;
 
-    this.state.index = (index + 1) % images.length;
+    const i = (index + 1) % images.length;
+    this.setState({ index: i });
     this.forceUpdate();
   }
 
   prev() {
     const { images, index } = this.state;
     const condition = (index + 1) % images.length >= 0;
-    this.state.index = condition ? (index + 1) % images.length : images.length - 1;
+    const i = condition ? (index + 1) % images.length : images.length - 1;
+    this.setState({ index: i });
     this.forceUpdate();
   }
 

@@ -50,6 +50,7 @@ const MemberPhoto = styled(CardMedia)`
 
 const MemberCardContainer = styled(Card)`
   max-width: 350px !important;
+  filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.5));
 `;
 
 const SocialLinks = styled(CardActions)`
