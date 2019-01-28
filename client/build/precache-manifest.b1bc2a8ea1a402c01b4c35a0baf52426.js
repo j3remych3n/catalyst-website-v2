@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/static/media/HKGrotesk-Regular.eb9ec08a.otf"
   },
   {
-    "revision": "ce5bc786aee117edc484",
-    "url": "/static/css/main.45226cc2.chunk.css"
+    "revision": "dfda504e01269c0d3ea8",
+    "url": "/static/css/main.e94d9edd.chunk.css"
   },
   {
-    "revision": "ced611daf7709cc778da928fec876475",
-    "url": "/static/media/slick.ced611da.eot"
+    "revision": "f97e3bbf73254b0112091d0192f17aec",
+    "url": "/static/media/slick.f97e3bbf.svg"
   },
   {
     "revision": "805295631fdcae05eabb",
@@ -28,31 +28,31 @@ self.__precacheManifest = [
     "url": "/static/media/GlacialIndifference-Regular.13dc531a.otf"
   },
   {
-    "revision": "ce5bc786aee117edc484",
-    "url": "/static/js/main.ce5bc786.chunk.js"
+    "revision": "dfda504e01269c0d3ea8",
+    "url": "/static/js/main.dfda504e.chunk.js"
   },
   {
     "revision": "c41c2502180f63ce383b6e3cc042617a",
     "url": "/static/media/Nunito-Light.c41c2502.ttf"
   },
   {
-    "revision": "d41f55a78e6f49a5512878df1737e58a",
-    "url": "/static/media/slick.d41f55a7.ttf"
-  },
-  {
     "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
     "url": "/static/media/slick.b7c9e1e4.woff"
   },
   {
-    "revision": "f97e3bbf73254b0112091d0192f17aec",
-    "url": "/static/media/slick.f97e3bbf.svg"
+    "revision": "ced611daf7709cc778da928fec876475",
+    "url": "/static/media/slick.ced611da.eot"
+  },
+  {
+    "revision": "d41f55a78e6f49a5512878df1737e58a",
+    "url": "/static/media/slick.d41f55a7.ttf"
   },
   {
     "revision": "805295631fdcae05eabb",
     "url": "/static/css/1.aa6c9016.chunk.css"
   },
   {
-    "revision": "fa5ccb8350f2b91b7f3a2c781eb5e80e",
+    "revision": "49372d9719f9b1ecd7b1aa3bcc480953",
     "url": "/index.html"
   }
 ];
