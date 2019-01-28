@@ -106,6 +106,7 @@ const LandingSplash = ({ device }) => (
                   minWidth: Math.max(1600, window.innerWidth * 1.5),
                   display: 'block',
                   margin: 'auto',
+                  filter: `drop-shadow(0 0 0.15rem${colors.blue})`,
                 }}
                 viewBox="0 0 1440 4996"
                 fill="none"
