@@ -16,17 +16,22 @@ const MemberPreviewMember = styled.div`
   }
 `;
 
-const MemberPreviewPicture = styled.img`
+const MemberPreviewPicture = styled.div`
   width: 131.25px;
   height: 131.25px;
   border-radius: 50%;
   transition: opacity 0.25s;
   border: ${({ selected }) => (selected ? '3px solid #ff7b7b' : `1px solid ${colors.white}`)};
   margin: ${({ selected }) => (selected ? '3px' : '5px')};
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: ${({ image }) => `url(${image})`};
 
   :hover {
     opacity: 0.8;
     cursor: pointer;
+    filter: drop-shadow(0 0 0.25rem ${colors.pink});
   }
 `;
 
@@ -43,7 +48,7 @@ const MemberPreview = ({
   name, imageSrc, isSelected, onSelect,
 }) => (
   <MemberPreviewMember onClick={onSelect}>
-    <MemberPreviewPicture src={imageSrc} alt={name} selected={isSelected} />
+    <MemberPreviewPicture image={imageSrc} alt={name} selected={isSelected} />
     <MemberPreviewName>
       <Textfit max={20} mode="single">
         {name}

@@ -9,7 +9,7 @@ const LeftArrow = styled.div`
   cursor: pointer;
   color: ${colors.white};
   display: inline;
-  transform: scale(3);
+  transform: scale(2);
 `;
 
 function CompanyCarouselLeftArrow(props) {

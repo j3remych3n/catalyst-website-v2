@@ -24,6 +24,12 @@ const Bottom = styled(Grid)`
   width: 100% !important;
 `;
 
+const LeftWrap = styled(Grid)`
+  height: 100% !important;
+  display: inline-block !important;
+  width: 100% !important;
+`;
+
 const Header = styled(Paper)`
   background-color: rgba(255, 255, 255, 0) !important;
   min-height: 100% !important;
@@ -69,19 +75,15 @@ const Section = ({
   }
   return (
     <div>
-      <Main device={device} direction={dir} container xs={12}>
+      <Main device={device} direction={dir} container>
         <Grid item xs={widthRatio}>
-          <Top item>
-            <Header device={device} elevation={0} />
-          </Top>
-
-          <Bottom device={device} item>
+          <LeftWrap>
             <Left elevation={0}>
               <Delay wait={1000}>
                 <Fade>{leftComponent}</Fade>
               </Delay>
             </Left>
-          </Bottom>
+          </LeftWrap>
         </Grid>
 
         <Grid item xs={12 - widthRatio}>

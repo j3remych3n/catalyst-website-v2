@@ -5,13 +5,34 @@ import PropTypes from 'prop-types';
 import Section from './Section';
 import LandingSplash from './LandingSplash';
 import BodyWrapper from './BodyWrapper';
-import '../overrides.css';
 import Faq from './Faq';
 import Blurbs from './Blurbs';
 import Members from './members/Members';
 import CompanyCarousel from './CompanyCarousel';
+import SingleImageCarousel from './SingleImageCarousel';
+import ContactUs from './ContactUs';
+import '../css/FullpageOverrides.css';
+import '../css/DotOverrides.css';
 
-const sectionList = ['home', 'mission', 'what we do', 'members', "where we've worked", 'faqs'];
+const sectionList = [
+  'home',
+  'mission',
+  'what we do',
+  'members',
+  "where we've worked",
+  'faqs',
+  'contact us',
+];
+
+const sectionColors = [
+  'rgba(0,0,0,0)',
+  '#222E70',
+  '#222E70',
+  '#222E70',
+  '#222E70',
+  '#222E70',
+  '#222E70',
+];
 
 const CompanyWrapper = styled.div`
   min-width: 100%;
@@ -28,7 +49,7 @@ const Home = ({ device }) => (
     navigation
     autoScrolling={device === 'desktop'}
     fitToSection={device === 'desktop'}
-    sectionsColor={['rgba(0,0,0,0)', '#222E70', '#222E70', '#222E70', '#222E70', '#222E70']}
+    sectionsColor={sectionColors}
     navigationTooltips={sectionList}
     render={() => (
       <div>
@@ -53,6 +74,11 @@ const Home = ({ device }) => (
             device={device}
             titleWhite="what we "
             titlePink="do()"
+            leftComponent={(
+              <div>
+                <SingleImageCarousel />
+              </div>
+)}
             bodyComponent={(
               <BodyWrapper device={device}>
                 <Blurbs section="what we do" />
@@ -82,7 +108,16 @@ const Home = ({ device }) => (
             device={device}
             titleWhite="faq"
             titlePink="?"
-            bodyComponent={<Faq />}
+            bodyComponent={<Faq device={device} />}
+            widthRatio={4}
+          />
+        </div>
+        <div className="section">
+          <Section
+            device={device}
+            titleWhite="contact us"
+            titlePink=">"
+            bodyComponent={<ContactUs device={device} />}
             widthRatio={4}
           />
         </div>

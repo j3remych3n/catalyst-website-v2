@@ -19,13 +19,11 @@ app.get('/api/members', (req, res) => {
           .filter(properties => properties.Status !== 'Alumnus') // needs to be updated in the Airtable annually
           .map(properties => ({
             name: properties.Name,
-            imageSrc: properties.Photo[0].url,
+            imageSrc: properties.Photo ? properties.Photo[0].url : '',
             year: properties.Year,
             giturl: properties.Github,
             linkedinurl: properties.LinkedIn,
-            bio: properties.Bio
-              ? properties.Bio.substring(0, MAX_BIO_LENGTH)
-              : 'This is a default bio that is used for testing.',
+            bio: properties.Bio ? properties.Bio.substring(0, MAX_BIO_LENGTH) : '',
             personalurl: properties['Personal Website'],
           })),
       });
@@ -75,11 +73,11 @@ app.get('/api/wwd/:key', (req, res) => {
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.use(express.static(path.join(__dirname, '../client/build')));
 
   // Handle React routing, return all requests to React app
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
   });
 }
 

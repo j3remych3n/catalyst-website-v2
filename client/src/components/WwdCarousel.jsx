@@ -19,6 +19,8 @@ const carouselSettings = {
   dots: false,
   speed: 1000,
   arrows: true,
+  fade: true,
+  adaptiveHeight: true,
   responsive: [
     {
       breakpoint: 1024,
@@ -45,8 +47,8 @@ const carouselSettings = {
 
 const styles = {
   images: {
-    maxWidth: 480,
-    maxHeight: 320,
+    width: '80%',
+    height: '100%',
     borderRadius: 7,
   },
 };
@@ -68,13 +70,19 @@ export default class WwdCarousel extends Component {
     axios
       .get('/api/grouppictures')
       .then(response => this.setState({ pics: response.data.pictures }))
-      .catch(err => console.err(err));
+      .catch(err => console.error(err));
   }
 
   render() {
     const { pics } = this.state;
     return (
-      <Grid item style={{ width: 480 }}>
+      <Grid
+        item
+        style={{
+          maxWidth: 480,
+          minWidth: 20,
+        }}
+      >
         <Slider {...carouselSettings}>
           {pics.map(pic => (
             <div key={uuidv1()}>

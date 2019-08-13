@@ -1,10 +1,8 @@
-/*Overrides must match specificity of pre-loaded styles!*/
-/*The simplest way to get the selector is with devtools*/
 #fp-nav ul li:hover a.active span,
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li:hover a.active span,
 .fp-slidesNav ul li a.active span {
-  background-color: #ef827f;
+  background-color: #ef827f !important;
 }
 
 .fp-tooltip,
@@ -12,11 +10,7 @@
   background-color: rgba(255, 123, 123, 0.7);
   padding: 5px;
   margin-top: -7px;
-}
-
-#fp-nav ul li a span,
-.fp-slidesNav ul li a span {
-  background-color: #c4c4c4;
+  filter: drop-shadow(0.1rem 0.2rem 0.05rem rgba(0, 0, 0, 0.2));
 }
 
 #fp-nav ul li .fp-tooltip {
