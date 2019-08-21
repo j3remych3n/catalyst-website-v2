@@ -62,7 +62,7 @@ const Home = ({ device }) => (
             titlePink=";"
             bodyComponent={(
               <BodyWrapper device={device}>
-                <Blurbs section="who we are" />
+                <Blurbs section="who_we_are" />
               </BodyWrapper>
 )}
             widthRatio={4}
@@ -81,7 +81,7 @@ const Home = ({ device }) => (
 )}
             bodyComponent={(
               <BodyWrapper device={device}>
-                <Blurbs section="what we do" />
+                <Blurbs section="what_we_do" />
               </BodyWrapper>
 )}
             widthRatio={4}
