@@ -13,7 +13,6 @@ app.get('/api/members', (req, res) => smartRespond(req, res, getMembers));
 app.get('/api/companies', (req, res) => smartRespond(req, res, getCompanies));
 app.get('/api/grouppictures', (req, res) => smartRespond(req, res, getGroupPictures));
 app.get('/api/faq', (req, res) => smartRespond(req, res, getFaq));
-app.get('/api/wwd/:key', (req, res) => smartRespond(req, res, getWWD));
 app.get('/api/wwd', (req, res) => smartRespond(req, res, getWWD));
 app.get('/api/sync_airtable', (req, res) => syncAirtable());
 
@@ -33,17 +32,17 @@ function _getCacheFilePath(req) {
   return path.join(__dirname, 'airtable-cache', `${filename}.json`);
 }
 
+// currently broken lol
 function syncAirtable() {
   const airtableFunctions = [
-    getMembers,
-    getCompanies,
-    getGroupPictures,
-    getCompanies,
-    getFaq,
-    getWWD,
+    { fn: getMembers, req: { originalUrl: 'members' } },
+    { fn: getCompanies, req: { originalUrl: 'companies' } },
+    { fn: getGroupPictures, req: { originalUrl: 'grouppictures' } },
+    { fn: getFaq, req: { originalUrl: 'faq' } },
+    { fn: getWWD, req: { originalUrl: 'wwd' } },
   ];
 
-  airtableFunctions.forEach(fn => fn({}, {}, cacheJson));
+  airtableFunctions.forEach(el => el.fn(el.req, {}, cacheJson));
 }
 
 // Wrapper for Airtable API calls that checks cache on fs before making Airtable call
@@ -63,11 +62,11 @@ function smartRespond(req, res, fn) {
 
 // Callback for Airtable API response (less messy with async tbh)
 function cacheAndSend(req, res, json) {
-  res.send(cacheJson(req, json));
+  res.send(cacheJson(req, res, json));
 }
 
 // Caches response as json on fs & parses for image links to download
-function cacheJson(req, json) {
+function cacheJson(req, res, json) {
   const jsonPath = _getCacheFilePath(req);
   const fileContents = JSON.stringify(json);
   fs.writeFileSync(jsonPath, fileContents);
@@ -128,12 +127,14 @@ function getFaq(req, res, callback) {
 }
 
 function getWWD(req, res, callback) {
-  let { key } = req.params;
-  key = 'what we do';
+  const key = 'what we do';
+  if (req.params) {
+    const { key } = req.params;
+  }
   const TABLE_NAME = 'General Info';
   websiteV2(TABLE_NAME)
-    .select({ filterByFormula: `FIND("${key}",Key)` })
+    .select()
     .all((err, data) => {
-      callback(req, res, { val: data[0].fields.Value });
+      callback(req, res, { text: data.map(description => description.fields) });
     });
 }
