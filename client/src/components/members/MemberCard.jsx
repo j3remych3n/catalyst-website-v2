@@ -116,7 +116,7 @@ function MemberCard(props) {
           component="img"
           alt="Member Card"
           height="345"
-          image={imageSrc}
+          image={process.env.PUBLIC_URL + imageSrc}
           title="Member Card"
         />
         <CardContent>
