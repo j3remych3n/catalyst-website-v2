@@ -13,7 +13,7 @@ app.get('/api/grouppictures', (req, res) => cache.respond(req, res, airtable.get
 app.get('/api/faq', (req, res) => cache.respond(req, res, airtable.getFaq));
 app.get('/api/wwd/:key', (req, res) => cache.respond(req, res, airtable.getWWD));
 
-// Cache reset functions; TODO require access token to protect
+// // Cache reset functions; TODO require access token to protect
 // app.get('/admin/sync_airtable', (req, res) => {
 //   cache.syncAirtable();
 //   res.sendStatus(200);
