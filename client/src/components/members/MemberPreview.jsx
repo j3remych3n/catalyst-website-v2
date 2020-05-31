@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Textfit } from 'react-textfit';
 import styled from 'styled-components';
-import LazyLoad from 'react-lazyload'
 
 import colors from '../../colors';
 

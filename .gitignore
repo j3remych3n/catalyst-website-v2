@@ -68,3 +68,5 @@ typings/
 compressed_images/
 full_member_images/
 log/
+*.jpg
+client/build/images/

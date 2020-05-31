@@ -28,7 +28,7 @@ const getMembers = (req, res, callback) => {
             let filename = name.replace(/\s+/g, '-').toLowerCase();
             return {
               name: name, 
-              imageSrc: 'http://localhost:5000/api/member/' + filename,
+              imageSrc: '/api/member/' + filename,
               year: properties.Year,
               giturl: properties.Github,
               linkedinurl: properties.LinkedIn,

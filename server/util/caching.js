@@ -6,6 +6,8 @@ const airtable = require('./airtableRequests.js');
 
 const CACHE_DIR = path.join(__dirname, '../airtable-cache');
 const IMAGE_DIR = path.join(__dirname, '../../client/public/images');
+const FULLSIZE_IMAGE_LOCATION = __dirname + '/../../full_member_images/';
+const COMPRESSED_IMAGE_LOCATION = FULLSIZE_IMAGE_LOCATION + '/../compressed_images/';
 const IMAGE_SUFFIXES = ['.jpg', 'jpeg', '.png', '.gif'];
 
 const getCacheFilePath = (req) => {
@@ -88,8 +90,12 @@ const syncAirtable = () => {
 const reset = () => {
   fs.removeSync(CACHE_DIR);
   fs.removeSync(IMAGE_DIR);
+  fs.removeSync(FULLSIZE_IMAGE_LOCATION);
+  fs.removeSync(COMPRESSED_IMAGE_LOCATION);
   fs.mkdirSync(CACHE_DIR);
   fs.mkdirSync(IMAGE_DIR);
+  fs.mkdirSync(FULLSIZE_IMAGE_LOCATION);
+  fs.mkdirSync(COMPRESSED_IMAGE_LOCATION);
 };
 
 module.exports = {
