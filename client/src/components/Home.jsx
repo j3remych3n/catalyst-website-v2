@@ -6,7 +6,7 @@ import Section from './Section';
 import LandingSplash from './LandingSplash';
 import BodyWrapper from './BodyWrapper';
 import Faq from './Faq';
-import Blurbs from './Blurbs';
+import Blurbs from './blurbs';
 import Members from './members/Members';
 import CompanyCarousel from './CompanyCarousel';
 import SingleImageCarousel from './SingleImageCarousel';

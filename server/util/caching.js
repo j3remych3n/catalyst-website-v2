@@ -90,7 +90,6 @@ const reset = () => {
   fs.removeSync(IMAGE_DIR);
   fs.mkdirSync(CACHE_DIR);
   fs.mkdirSync(IMAGE_DIR);
-  syncAirtable();
 };
 
 module.exports = {

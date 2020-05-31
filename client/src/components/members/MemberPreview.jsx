@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Textfit } from 'react-textfit';
 import styled from 'styled-components';
+import LazyLoad from 'react-lazyload'
 
 import colors from '../../colors';
 
@@ -26,6 +27,7 @@ const MemberPreviewPicture = styled.div`
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  transform: translateZ(0);
   background-image: ${({ image }) => `url(${image})`};
 
   :hover {
@@ -34,6 +36,17 @@ const MemberPreviewPicture = styled.div`
     filter: drop-shadow(0 0 0.25rem ${colors.pink});
   }
 `;
+// const MemberPreviewPicture = (props) => {
+//   return (
+//     <div style={{width: '131.25px', height: '131.25px', borderRadius: '50%', transition: 'opacity .25s', backgroundPosition: 'center center'}}>
+//       <LazyLoad>
+//         <img 
+//           src={props.image}
+//         />
+//       </LazyLoad>
+//     </div>
+//   );
+// }
 
 const MemberPreviewName = styled.div`
   font-family: 'Nunito';
