@@ -6,7 +6,7 @@ import Section from './Section';
 import LandingSplash from './LandingSplash';
 import BodyWrapper from './BodyWrapper';
 import Faq from './Faq';
-import Blurbs from './Blurbs';
+import Blurbs from './Blurbs.jsx';
 import Members from './members/Members';
 import CompanyCarousel from './CompanyCarousel';
 import SingleImageCarousel from './SingleImageCarousel';
@@ -37,8 +37,9 @@ const sectionColors = [
 const CompanyWrapper = styled.div`
   min-width: 100%;
   min-height: 100%;
-  ${({ device }) => device === 'mobile'
-    && `
+  ${({ device }) =>
+    device === 'mobile' &&
+    `
     display: flex !important;
     align-items: center !important;
   `};
@@ -60,11 +61,11 @@ const Home = ({ device }) => (
             device={device}
             titleWhite="mission statement"
             titlePink=";"
-            bodyComponent={(
+            bodyComponent={
               <BodyWrapper device={device}>
                 <Blurbs section="who_we_are" />
               </BodyWrapper>
-)}
+            }
             widthRatio={4}
           />
         </div>
@@ -74,16 +75,16 @@ const Home = ({ device }) => (
             device={device}
             titleWhite="what we "
             titlePink="do()"
-            leftComponent={(
+            leftComponent={
               <div>
                 <SingleImageCarousel />
               </div>
-)}
-            bodyComponent={(
+            }
+            bodyComponent={
               <BodyWrapper device={device}>
                 <Blurbs section="what_we_do" />
               </BodyWrapper>
-)}
+            }
             widthRatio={4}
           />
         </div>
@@ -95,11 +96,11 @@ const Home = ({ device }) => (
             device={device}
             titleWhite="where we've worked"
             titlePink=":"
-            bodyComponent={(
+            bodyComponent={
               <CompanyWrapper device={device}>
                 <CompanyCarousel />
               </CompanyWrapper>
-)}
+            }
             widthRatio={4}
           />
         </div>

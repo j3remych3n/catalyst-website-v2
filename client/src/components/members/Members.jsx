@@ -13,7 +13,7 @@ const DEFAULT_CARD = {
   imageSrc: catalystLogo,
   year: '2019',
   giturl: '',
-  linkedinurl: '',
+  linkedinurl: 'https://www.linkedin.com/company/duke-catalyst/',
   personalurl: '',
   bio: "Duke's first social and pre-professional tech organization.",
 };
@@ -33,7 +33,7 @@ export default class Members extends Component {
       .then((response) => {
         this.setState({ members: response.data.members });
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   }
 
   render() {
@@ -46,12 +46,12 @@ export default class Members extends Component {
           leftComponent={<MemberCard selected={selected} />}
           titleWhite="members"
           titlePink="[]"
-          bodyComponent={(
+          bodyComponent={
             <MemberChoice
               members={members}
-              onSelect={chosen => this.setState({ selected: chosen })}
+              onSelect={(chosen) => this.setState({ selected: chosen })}
             />
-)}
+          }
           widthRatio={4}
         />
       </div>

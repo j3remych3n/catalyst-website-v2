@@ -44,12 +44,12 @@ const Bio = styled(Typography)`
 
 const MemberPhoto = styled(CardMedia)`
   object-fit: cover !important;
-  max-width: 350px !important;
-  max-height: 350px !important;
+  width: 100% !important;
+  height: 350px !important;
 `;
 
 const MemberCardContainer = styled(Card)`
-  max-width: 350px !important;
+  width: 350px !important;
   filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.5));
 `;
 
@@ -67,7 +67,13 @@ const scaleFontSize = (nameLength) => {
 function MemberCard(props) {
   const { selected } = props;
   const {
-    giturl, linkedinurl, personalurl, imageSrc, bio, year, name,
+    giturl,
+    linkedinurl,
+    personalurl,
+    imageSrc,
+    bio,
+    year,
+    name,
   } = selected;
 
   let gitbutton = null;
@@ -122,7 +128,11 @@ function MemberCard(props) {
         <CardContent>
           <Grid container justify="space-between" alignItems="center">
             <Grid item>
-              <Name variant="h5" component="h2" nameSize={scaleFontSize(name.length)}>
+              <Name
+                variant="h5"
+                component="h2"
+                nameSize={scaleFontSize(name.length)}
+              >
                 {name}
               </Name>
             </Grid>
