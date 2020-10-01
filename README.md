@@ -1,10 +1,10 @@
 # catalyst-website-v2
 
-Repository for rehaul of v1 of Duke Catalyst's website
+Repository for rehaul of v1 of Duke Catalyst's website.
 
-**Restrictions**
+**Restrictions which must need to follow**
 
-- Bios need to be less than 75 characters and two lines long
-- Photos should be square and centered around your head + rightside up
-- event photos (???)
-- company logos should preferably be the same height
+- Bios need to be less than 75 characters and two lines long.
+- Photos should be square and centered around your head + rightside up.
+- event photos (???).
+- company logos should preferably be the same height.
